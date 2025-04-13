@@ -11,6 +11,7 @@ import ig from "../../assets/ig.png";
 import linkedln from "../../assets/linkedln.png";
 import youtube from "../../assets/youtube.png";
 import CountryCitySelector from "../../Components/CountryCitySelector";
+import { AiOutlineCopyright } from "react-icons/ai";
 
 const Login = () => {
   const [activeTab, setActiveTab] = useState("user");
@@ -153,11 +154,12 @@ const Login = () => {
                   </span>
                 </label> */}
 
-
-    
-    <a href="#" className="block text-sm text-indigo-600 mt-2 hover:underline">
-        Forgot Password?
-      </a> 
+                <a
+                  href="#"
+                  className="block text-sm text-indigo-600 mt-2 hover:underline"
+                >
+                  Forgot Password?
+                </a>
                 {/* <p className="font-[DM Sans] text-[16px] font-medium text-[#008080] text-right mr-[20px] mt-[16px]">
                   Forgot Password?
                 </p> */}
@@ -207,7 +209,7 @@ const Login = () => {
             </span>
           </h2>
 
-          <div className="hidden lg:block bg-[#F5F5DC] w-[540px] ml-[20px]  min-h-[74px] rounded-xl   mt-7">
+          <div className="hidden lg:block bg-[#F5F5DC] w-[540px] ml-[20px] mr-[20px]  min-h-[74px] rounded-xl   mt-7">
             <div className="flex justify-center items-center gap-3 py-3">
               <button
                 onClick={() => handleTabClick("user")}
@@ -237,7 +239,7 @@ const Login = () => {
               {activeTab === "user" && (
                 <div>
                   <input
-                    className="w-[90%] h-[70px] mx-[20px] outline-0 rounded-lg px-[16px] py-[17px] bg-[#E6E6E6]"
+                    className="w-[94%] h-[70px] mx-[20px] outline-0 rounded-lg px-[16px] py-[17px] bg-[#E6E6E6]"
                     type="email"
                     placeholder="Email"
                     name="email"
@@ -261,10 +263,10 @@ const Login = () => {
                       Password{" "}
                     </span>
                   </label> */}
-                  <p className="font-[DM Sans] text-[16px] font-medium text-[#008080] text-right mr-[30px] mt-[16px]">
+                  <p className="font-[DM Sans] text-[16px] font-medium text-[#008080] text-right mr-[12px] mt-[16px]">
                     Forgot Password?
                   </p>
-                  <button className="w-[90%] bg-[#BA4D00] px[32px] py-[17px] mx-[20px] mt-[28px] rounded-lg text-[18px] font-[DM Sans] font-semibold text-[#FEFEFC]">
+                  <button className="w-[94%] bg-[#BA4D00] px[32px] py-[17px] mx-[20px] mt-[28px] cursor-pointer rounded-lg text-[18px] font-[DM Sans] font-semibold text-[#FEFEFC]">
                     Login
                   </button>
 
@@ -275,7 +277,7 @@ const Login = () => {
                     </p>{" "}
                     <hr className="w-[20%] border border-[#C1C5C8]" />
                   </div>
-                  <button className="flex justify-center items-center gap-[10px]  h-[56px] w-[90%] font-[DM Sans]  border border-[#5E6A72] bg-[white] px[32px] py-[17px] mx-[20px] mt-[28px] rounded-lg text-[18px] text-[#36454F]">
+                  <button className="flex justify-center items-center gap-[10px] cursor-pointer h-[56px] w-[94%] font-[DM Sans]  border border-[#5E6A72] bg-[white] px[32px] py-[17px] mx-[20px] mt-[28px] rounded-lg text-[18px] text-[#36454F]">
                     <FcGoogle /> Google
                   </button>
                   <p className=" text-left font-[DM Sans] font-medium text-[18px] ml-[20px] text-[#36454F] mt-[28px]">
@@ -308,7 +310,7 @@ const Login = () => {
               We exist to help you get secure, fast and reliable artisans at
               affordable rate
             </p>
-            <CountryCitySelector className="pt-[38px]" />
+            <CountryCitySelector className="" />
           </div>
           <div>
             <div>
@@ -409,7 +411,18 @@ const Login = () => {
             </div>
           </div>
         </div>
-        <div className="w-[100%] bg-[white]"></div>
+        {/* <div className="w-[100%] h-1 mt-[38px] pl-[100px] pr-[100px] bg-[white]"></div>
+         */}
+        <hr className="border-[#007474] ml-[100px] mr-[100px] mt-[60px]" />
+        <div className="flex items-center gap-3 ml-[100px] text-[#A3A9AE] mt-[60px]">
+          <AiOutlineCopyright />
+          <p className="font-[DM Sans] font-medium text-[16px]">
+            2025 Fndartisan Technologies.
+          </p>{" "}
+          <p className="font-[DM Sans] font-medium text-[16px]">
+            Terms & Conditions/ Cookies policy / Privacy policy
+          </p>
+        </div>
       </div>
     </div>
   );
