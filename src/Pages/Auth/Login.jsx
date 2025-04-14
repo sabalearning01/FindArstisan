@@ -263,6 +263,28 @@ const Login = () => {
                       Password{" "}
                     </span>
                   </label> */}
+
+                  <div className="relative mt-[30px] w-[94%] ml-[20px]">
+                    <input
+                      id="password"
+                      type="password"
+                      placeholder=" "
+                      className="peer w-[100%] px-4 py-3 text-lg border-2 border-gray-400 rounded-lg outline-none bg-inherit transition-all duration-200 focus:border-[#008080] hover:border-[#008080]"
+                    />
+                    <BsEye
+                      className="absolute top-5 lg:right-4 cursor-pointer"
+                      onClick={togglePasswordVisibility}
+                    />
+                    <label
+                      htmlFor="password"
+                      className="absolute left-4 top-3 text-xl text-gray-500 transition-all duration-200 bg-gray-200 px-1 pointer-events-none
+               peer-placeholder-shown:top-3 peer-placeholder-shown:text-lg 
+               peer-focus:top-[-10px] peer-focus:text-sm peer-focus:text-[#008080]"
+                    >
+                      Password
+                    </label>
+                  </div>
+
                   <p className="font-[DM Sans] text-[16px] font-medium text-[#008080] text-right mr-[12px] mt-[16px]">
                     Forgot Password?
                   </p>
@@ -289,16 +311,84 @@ const Login = () => {
                 </div>
               )}
               {activeTab === "artisan" && (
-                <p className="text-lg font-medium text-gray-700">
-                  Welcome Artisan! Please proceed to log in as an artisan.
-                </p>
+                // <p className="text-lg font-medium text-gray-700">
+                //   Welcome Artisan! Please proceed to log in as an artisan.
+                // </p>
+                <div>
+                  <input
+                    className="w-[94%] h-[70px] mx-[20px] outline-0 rounded-lg px-[16px] py-[17px] bg-[#E6E6E6]"
+                    type="email"
+                    placeholder="Email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                  />
+                      
+                      <div className="relative mt-[30px] w-[94%] ml-[20px]">
+                    <input
+                      id="password"
+                      type="password"
+                      placeholder=" "
+                      className="peer w-[100%] px-4 py-3 text-lg border-2 border-gray-400 rounded-lg outline-none bg-inherit transition-all duration-200 focus:border-[#008080] hover:border-[#008080]"
+                    />
+                    <BsEye
+                      className="absolute top-5 lg:right-4 cursor-pointer"
+                      onClick={togglePasswordVisibility}
+                    />
+                    <label
+                      htmlFor="password"
+                      className="absolute left-4 top-3 text-xl text-gray-500 transition-all duration-200 bg-gray-200 px-1 pointer-events-none
+               peer-placeholder-shown:top-3 peer-placeholder-shown:text-lg 
+               peer-focus:top-[-10px] peer-focus:text-sm peer-focus:text-[#008080]"
+                    >
+                      Password
+                    </label>
+                  </div>
+
+                  <p className="font-[DM Sans] text-[16px] font-medium text-[#008080] text-right mr-[12px] mt-[16px]">
+                    Forgot Password?
+                  </p>
+                  <button className="w-[94%] bg-[#BA4D00] px[32px] py-[17px] mx-[20px] mt-[28px] cursor-pointer rounded-lg text-[18px] font-[DM Sans] font-semibold text-[#FEFEFC]">
+                    Login
+                  </button>
+
+                  <div className="flex justify-between items-center mt-[28px] mx-[20px]">
+                    <hr className="w-[20%] border border-[#C1C5C8]" />
+                    <p className="font-[DM Sans] text-[18px] font-medium text-[#788289]">
+                      or continue with{" "}
+                    </p>{" "}
+                    <hr className="w-[20%] border border-[#C1C5C8]" />
+                  </div>
+                  <button className="flex justify-center items-center gap-[10px] cursor-pointer h-[56px] w-[94%] font-[DM Sans]  border border-[#5E6A72] bg-[white] px[32px] py-[17px] mx-[20px] mt-[28px] rounded-lg text-[18px] text-[#36454F]">
+                    <FcGoogle /> Google
+                  </button>
+                  <p className=" text-left font-[DM Sans] font-medium text-[18px] ml-[20px] text-[#36454F] mt-[28px]">
+                    Don’t have an account?{" "}
+                    <span className="font-[DM Sans] text-[18px] text-[#CC5500] font-semibold">
+                      Create Account!
+                    </span>
+                  </p>
+
+                  </div>
               )}
             </div>
           </form>
         </div>
       </div>
-      <div className="hidden lg:block bg-[#004646] w-[100%] h-[508px]">
-        <div className="flex justify-between ml-[100px] mr-[124px] pt-[88px]">
+
+      {/* Mobile screen */}
+      {/* <div className="w-[430px] lg:hidden bg-[#004646]">
+        <div className="flex  items-center">
+          <LuTextSearch className="text-white text-2xl lg:text-3xl cursor-pointer" />
+          <h6 className="font-[DM Sans]  cursor-pointer font-bold text-[17.15px] text-[#E6F2F2] lg:text-[28.45px]">
+            Findartisan
+          </h6>
+        </div>
+      </div> */}
+
+      <div className="hidden lg:block lg:bg-[#004646] lg:w-[100%] lg:h-[508px]">
+        {/* Big screen */}
+        <div className="flex  justify-between ml-[100px] mr-[124px] pt-[88px]">
           <div>
             <div className="flex  items-center">
               <LuTextSearch className="text-white text-2xl lg:text-3xl cursor-pointer" />
@@ -411,8 +501,7 @@ const Login = () => {
             </div>
           </div>
         </div>
-        {/* <div className="w-[100%] h-1 mt-[38px] pl-[100px] pr-[100px] bg-[white]"></div>
-         */}
+
         <hr className="border-[#007474] ml-[100px] mr-[100px] mt-[60px]" />
         <div className="flex items-center gap-3 ml-[100px] text-[#A3A9AE] mt-[60px]">
           <AiOutlineCopyright />
