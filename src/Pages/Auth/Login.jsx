@@ -1,14 +1,5 @@
 import React, { useState } from "react";
-// import * as Yup from "yup";
-// import { IoMenuOutline } from "react-icons/io5";
-// import { LuTextSearch } from "react-icons/lu";
-// import { MdArrowDropDown } from "react-icons/md";
-// import { BsEye } from "react-icons/bs";
-// import { FcGoogle } from "react-icons/fc";
 import Artisan from "../../assets/Artisan.png";
-
-import CountryCitySelector from "../../Components/CountryCitySelector";
-import { AiOutlineCopyright } from "react-icons/ai";
 import Header from "../../Components/Header";
 import Tab from "../../Components/Tab";
 import Footer from "../../Components/Footer";

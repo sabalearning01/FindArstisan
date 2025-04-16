@@ -20,22 +20,32 @@ const Header = () => {
                 <MdArrowDropDown className="text-[#FDFDFD] mt-[5px]" />
               </div> */}
               <div className="relative inline-block text-left group">
-  <button className="inline-flex items-center text-white font-semibold">
-    Explore Services
-    {/* <svg class="ml-1 w-4 h-4" fill="white" viewBox="0 0 20 20">
-      <path d="M5.23 7.21a.75.75 0 011.06.02L10 11.186l3.71-3.954a.75.75 0 011.08 1.04l-4.25 4.53a.75.75 0 01-1.08 0l-4.25-4.53a.75.75 0 01.02-1.06z"/>
-    </svg> */}
-     <MdArrowDropDown className="text-[#FDFDFD] mt-[5px]" />
-  </button>
+                <button className="inline-flex items-center text-white font-semibold">
+                  Explore Services
+                  <MdArrowDropDown className="text-[#FDFDFD] mt-[5px]" />
+                </button>
 
-  
-  <div className="hidden group-hover:block absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-10">
-    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Web Development</a>
-    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">Graphic Design</a>
-    <a href="#" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">SEO Services</a>
-  </div>
-</div>
-
+                <div className="hidden group-hover:block absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md z-10">
+                  <a
+                    href="#"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Web Development
+                  </a>
+                  <a
+                    href="#"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Graphic Design
+                  </a>
+                  <a
+                    href="#"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    SEO Services
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
           <div className="flex justify-center items-center gap-[12px] mr-2.5  ">
