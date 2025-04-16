@@ -9,9 +9,9 @@ import { AiOutlineCopyright } from "react-icons/ai";
 const Footer = () => {
   return (
     <div>
-      <div className="hidden lg:block bg-[#004646] lg:w-[100%] lg:h-[508px]">
+      <div className="hidden lg:block md:block bg-[#004646] lg:w-[100%] lg:h-[508px]">
         {/* Big screen */}
-        <div className="flex  justify-between ml-[100px] mr-[124px] pt-[88px]">
+        <div className="flex  justify-between md:gap-[30px] ml-[100px] mr-[124px] pt-[88px]">
           <div>
             <div className="flex  items-center">
               <LuTextSearch className="text-white text-2xl lg:text-3xl cursor-pointer" />
@@ -23,7 +23,9 @@ const Footer = () => {
               We exist to help you get secure, fast and reliable artisans at
               affordable rate
             </p>
-           <div className="pt-[38.24px]"><CountryCitySelector className="" /></div> 
+            <div className="pt-[38.24px]">
+              <CountryCitySelector className="" />
+            </div>
           </div>
           <div>
             <div>
@@ -138,77 +140,126 @@ const Footer = () => {
       </div>
 
       {/* Mobile Screen */}
-      <div className="block bg-[#004646] lg:hidden w-[100%] h-[923.76px] px-[20px] mt-[74px]  pt-[64px]">
-
+      <div className="block md:hidden bg-[#004646] lg:hidden w-[100%] h-[923.76px] px-[20px] mt-[74px]  pt-[64px]">
         <div className="flex items-center  ">
-          <LuTextSearch className="text-white text-3xl"/>
-          <h5 className="text-[#E6F2F2] text-[28.45px] font-[DM Sans] font-medium">Findartisan</h5>
+          <LuTextSearch className="text-white text-3xl" />
+          <h5 className="text-[#E6F2F2] text-[28.45px] font-[DM Sans] font-medium">
+            Findartisan
+          </h5>
         </div>
 
-        <p className="font-[DM Sans] font-normal text-[12px] text-[#C1C5C8] mt-[16px] ">We  exist to help you get secure, fast and reliable artisans at affordable rate</p>
+        <p className="font-[DM Sans] font-normal text-[12px] text-[#C1C5C8] mt-[16px] ">
+          We exist to help you get secure, fast and reliable artisans at
+          affordable rate
+        </p>
 
         <div className="flex gap-[55px]  pt-[40px]">
           <div>
-        <div><h4 className="Font-[DM Sans] font-semibold text-white text-[18px]">For Customers</h4></div>
-        
-        <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium pt-[16px]">Hire an artisan</p>
-        <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium pt-[16px]">How it works</p>
-        <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium pt-[16px]">Log in</p>
-        <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium pt-[16px]">Sign up</p>
-        </div>
-        <div>
-        <div><h4 className="Font-[DM Sans] font-semibold text-white text-[18px]">For Artisans</h4>
-        </div> 
-        <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium pt-[16px]">How it works</p>
-        <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium pt-[16px]">Sign up as Artisan</p>
-        <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium pt-[16px]">Log in</p>
-        
-        </div>
-      </div>
-     
-      
-      <div className="flex  gap-[16px]  pt-[40px]">
+            <div>
+              <h4 className="Font-[DM Sans] font-semibold text-white text-[18px]">
+                For Customers
+              </h4>
+            </div>
+
+            <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium pt-[16px]">
+              Hire an artisan
+            </p>
+            <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium pt-[16px]">
+              How it works
+            </p>
+            <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium pt-[16px]">
+              Log in
+            </p>
+            <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium pt-[16px]">
+              Sign up
+            </p>
+          </div>
           <div>
-        <div><h4 className="Font-[DM Sans] font-semibold text-white text-[18px]">Supports</h4></div>
-        <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium pt-[16px]">Send us a mail</p>
-        <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium pt-[16px]">Give feedback as user</p>
+            <div>
+              <h4 className="Font-[DM Sans] font-semibold text-white text-[18px]">
+                For Artisans
+              </h4>
+            </div>
+            <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium pt-[16px]">
+              How it works
+            </p>
+            <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium pt-[16px]">
+              Sign up as Artisan
+            </p>
+            <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium pt-[16px]">
+              Log in
+            </p>
+          </div>
         </div>
-        
-        <div className="">
-        <div><h4 className="Font-[DM Sans] font-semibold text-white text-[18px]">Follow us</h4>
-        </div> 
-        <div>
-       
-        <div className=" flex items-center gap-1.5 pt-[16px]"><img src={ig} alt=""/> <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium ">Instagram</p></div>
-          <div className=" flex items-center gap-1.5 pt-[16px]"><img src={ig} alt=""/> <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium ">Linkedin</p></div>
-          <div className=" flex items-center gap-1.5 pt-[16px]"> <img src={ig} alt=""/> <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium ">X/Twitter</p></div>
-         <div className=" flex items-center gap-1.5 pt-[16px]"> <img src={ig} alt=""/>  <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium ">Youtube</p></div>
+
+        <div className="flex  gap-[16px]  pt-[40px]">
+          <div>
+            <div>
+              <h4 className="Font-[DM Sans] font-semibold text-white text-[18px]">
+                Supports
+              </h4>
+            </div>
+            <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium pt-[16px]">
+              Send us a mail
+            </p>
+            <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium pt-[16px]">
+              Give feedback as user
+            </p>
+          </div>
+
+          <div className="">
+            <div>
+              <h4 className="Font-[DM Sans] font-semibold text-white text-[18px]">
+                Follow us
+              </h4>
+            </div>
+            <div>
+              <div className=" flex items-center gap-1.5 pt-[16px]">
+                <img  className="object-contain" src={ig} alt="Instagram Icon link" />{" "}
+                <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium ">
+                  Instagram
+                </p>
+              </div>
+              <div className=" flex items-center gap-1.5 pt-[16px]">
+                <img className="object-contain" src={linkedln} alt="Linkedln Icon link" />{" "}
+                <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium ">
+                  Linkedin
+                </p>
+              </div>
+              <div className=" flex items-center gap-1.5 pt-[16px]">
+                {" "}
+                <img className="object-contain" src={x} alt=" X Icon link" />{" "}
+                <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium ">
+                  X/Twitter
+                </p>
+              </div>
+              <div className=" flex items-center gap-1.5 pt-[16px]">
+                {" "}
+                <img className="object-contain" src={youtube} alt="Youtube Icon Link" />{" "}
+                <p className="text-[#E6F2F2] font-[DM Sans] text-[16px] font-medium ">
+                  Youtube
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-       
-      </div>
-       
-      </div>
-      
-      <div className="pt-[40px]">
-       <CountryCitySelector />
-       </div>
-         <hr className=" w-[100%] bg-[white] mt-[60px]" />
-         <div className="flex items-center gap-3  text-[#A3A9AE] mt-[60px]">
+
+        <div className="pt-[40px]">
+          <CountryCitySelector />
+        </div>
+        <hr className=" w-[100%] bg-[white] mt-[60px]" />
+        <div className="flex items-center gap-3  text-[#A3A9AE] mt-[60px]">
           <AiOutlineCopyright />
           <p className="font-[DM Sans] font-medium text-[16px]">
             2025 Fndartisan Technologies.
           </p>{" "}
         </div>
         <p className="font-[DM Sans] font-medium text-[16px] text-[#A3A9AE]">
-            Terms & Conditions/ Cookies policy / Privacy policy
-          </p>
-     </div>
+          Terms & Conditions/ Cookies policy / Privacy policy
+        </p>
+      </div>
 
- 
-    
-    
-    
-    <div/>
+      <div />
     </div>
   );
 };

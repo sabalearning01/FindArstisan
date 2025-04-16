@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { BsEye } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import * as Yup from "yup";
+import GoogleAuth from "./GoogleAuth";
 
 const AuthInput = () => {
   const [activeTab, setActiveTab] = useState("user");
@@ -65,7 +67,7 @@ const AuthInput = () => {
             <div>
               {/* Email */}
               <input
-                className="w-[90%] md:w-[94%] h-[70px] mx-[20px] outline-0 rounded-lg px-[16px] py-[17px] bg-[#E6E6E6]"
+                className="w-[90%]  md:w-[90%] lg:w-[94%] h-[70px] mx-[20px] outline-0 rounded-lg px-[16px] py-[17px] bg-[#E6E6E6]"
                 type="email"
                 placeholder="Email"
                 name="email"
@@ -77,7 +79,7 @@ const AuthInput = () => {
               )}
 
               {/* Password */}
-              <div className="relative mt-[30px] w-[90%] lg:w-[94%] ml-[20px]">
+              <div className="relative mt-[30px] w-[90%] lg:w-[94%] mx-[20px]">
                 <input
                   id="password"
                   name="password"
@@ -104,41 +106,41 @@ const AuthInput = () => {
                 <p className="text-red-500 text-sm ml-[20px] mt-1">{errors.password}</p>
               )}
 
-              <a
-                href="#"
-                className="block font-[DM Sans] text-right text-[16px] text-[#008080] mt-2 mr-[20px] hover:underline"
+              <Link to="/forgot-password"
+                className="block font-[DM Sans] text-right text-[16px] text-[#008080] mt-2 md:mr-[5px] mr-[20px] hover:underline"
               >
                 Forgot Password?
-              </a>
+              </Link>
 
               {/* Submit */}
               <button
                 type="submit"
-                className="w-[90%] md:w-[95%] bg-[#BA4D00] px[32px] py-[17px] mx-[20px] mt-[28px] rounded-lg text-[18px] font-[DM Sans] font-semibold text-[#FEFEFC]"
+                className="w-[90%] md:w-[90%] lg:w-[94%] bg-[#BA4D00] px[32px] py-[17px] mx-[20px] mt-[28px] rounded-lg text-[18px] font-[DM Sans] font-semibold text-[#FEFEFC]"
               >
                 Login
               </button>
 
               {/* Divider */}
               <div className="flex justify-between items-center mt-[28px] mx-[20px]">
-                <hr className="w-[20%] border border-[#C1C5C8]" />
+                <hr className="w-[20%] md:w-[25px] lg:w-[30%] border border-[#C1C5C8]" />
                 <p className="font-[DM Sans] text-[18px] font-medium text-[#788289]">
                   or continue with
                 </p>
-                <hr className="w-[20%] border border-[#C1C5C8]" />
+                <hr className="w-[20%] md:w-[25px] lg:w-[30%] border border-[#C1C5C8]" />
               </div>
 
               {/* Google Login */}
-              <button className="flex justify-center items-center md:w-[95%] cursor-pointer gap-[10px] h-[56px] w-[90%] font-[DM Sans] border border-[#5E6A72] bg-[white] px[32px] py-[17px] mx-[20px] mt-[28px] rounded-lg text-[18px] text-[#36454F]">
-                <FcGoogle /> Google
+              <button className="flex justify-center items-center md:w-[90%] lg:w-[94%] cursor-pointer gap-[10px] h-[56px] w-[90%] font-[DM Sans] border border-[#5E6A72] bg-[white] px[32px] py-[17px] mx-[20px] mt-[28px] rounded-lg text-[18px] text-[#36454F]">
+                {/* <FcGoogle /> Google */}
+                <GoogleAuth/>
               </button>
 
               {/* Switch to Signup */}
               <p className="text-center font-[DM Sans] font-medium text-[18px] text-[#36454F] mt-[28px]">
                 Don’t have an account?{" "}
-                <span className="text-[#CC5500] font-semibold cursor-pointer">
+                <Link to="/sign-up" className="text-[#CC5500] font-semibold cursor-pointer">
                   Create Account!
-                </span>
+                </Link>
               </p>
             </div>
           )}
