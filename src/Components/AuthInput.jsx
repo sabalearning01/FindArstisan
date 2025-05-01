@@ -4,6 +4,9 @@ import { BsEye } from "react-icons/bs";
 import { FcGoogle } from "react-icons/fc";
 import * as Yup from "yup";
 import GoogleAuth from "./GoogleAuth";
+import Artisan from '../assets/Artisan.png'
+import Tab from "./Tab";
+import Tab2 from "./Tab2";
 
 const AuthInput = () => {
   const [activeTab, setActiveTab] = useState("user");
@@ -59,9 +62,21 @@ const AuthInput = () => {
   };
 
   return (
+    <div className="flex justify-between items-center">
+      
+     <div className="hidden lg:block"> <img src={Artisan} alt="Artisan Image" /></div>
+     
+    <div>
     
-    
+         <h2 className="hidden lg:block  font-[DM Sans] font-bold text-[32px] mt-[74px] mx-[20px] ">
+          Welcome Back, <span className="text-[#BA4D00] lg:hidden">Login!</span>{" "}
+          <span className="hidden lg:block text-[#008080] ">Login!</span>
+        </h2>
+        
+      {/* <Tab className=" lg:block" /> */}
       <form onSubmit={handleSubmit}>
+      <Tab/>
+      {/* <Tab2 className="block lg:hidden"/> */}
         <div className="mt-6">
           {activeTab === "user" && (
             <div>
@@ -153,7 +168,8 @@ const AuthInput = () => {
         </div>
       
       </form>
-    
+      </div>
+    </div>
   );
 };
 

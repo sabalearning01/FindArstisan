@@ -66,11 +66,17 @@
 import { useState } from "react";
 import "./App.css";
 import Login from "./Pages/Auth/Login";
+import Homepage from "./Pages/Homepage";
+import Carousel  from "./Components/Carousel";
+import AlteHome from "./Components/AlteHome";
 
 function App() {
   return (
     <div>
       <Login />
+      {/* <Homepage/> */}
+      {/* <Carousel/> */}
+      {/* <AlteHome/> */}
     </div>
   );
 }

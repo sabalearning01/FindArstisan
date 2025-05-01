@@ -140,7 +140,7 @@ const Footer = () => {
       </div>
 
       {/* Mobile Screen */}
-      <div className="block md:hidden bg-[#004646] lg:hidden w-[100%] h-[923.76px] px-[20px] mt-[74px]  pt-[64px]">
+      <div className=" md:hidden bg-[#004646] lg:hidden w-[100%] h-[923.76px] px-[20px] mt-[74px]  pt-[64px]">
         <div className="flex items-center  ">
           <LuTextSearch className="text-white text-3xl" />
           <h5 className="text-[#E6F2F2] text-[28.45px] font-[DM Sans] font-medium">
@@ -247,7 +247,7 @@ const Footer = () => {
         <div className="pt-[40px]">
           <CountryCitySelector />
         </div>
-        <hr className=" w-[100%] bg-[white] mt-[60px]" />
+        <hr className=" w-[100%] bg-[#007474] mt-[60px]" />
         <div className="flex items-center gap-3  text-[#A3A9AE] mt-[60px]">
           <AiOutlineCopyright />
           <p className="font-[DM Sans] font-medium text-[16px]">
