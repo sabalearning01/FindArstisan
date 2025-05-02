@@ -137,13 +137,13 @@ const Homepage = () => {
         )}
 
         {/* <img
-          className="hidden  lg:block relative bottom-[330px] "
+          className="hidden w-auto h-[530px] left-0.5  lg:block relative bottom-[350px] "
           src={Ellipse1}
           alt=""
         /> */}
 
         <div
-          className="hidden lg:block relative bottom-[330px] lg:w-auto lg:h-[712px] bg-no-repeat "
+          className="hidden lg:block relative bottom-[350px] lg:w-auto lg:h-[712px] bg-no-repeat "
           style={{ backgroundImage: `url(${Ellipse1})` }}
         ></div>
 

@@ -25,7 +25,7 @@ const Header = () => {
                 </h5>
                 <MdArrowDropDown className="text-[#FDFDFD] mt-[5px]" />
               </div> */}
-              <div className="relative inline-block text-left group">
+              <div className="relative md:hidden inline-block text-left group">
                 <button className="inline-flex items-center text-white font-semibold">
                   Explore Services
                   <MdArrowDropDown className="text-[#FDFDFD] mt-[5px]" />
@@ -64,7 +64,7 @@ const Header = () => {
             <button className="hidden md:hidden lg:block font-[DM Sans] cursor-pointer text-[16px] rounded-lg text-[#FDFDFD] font-medium py-[14px] px-[32px]  border-1 border-white">
               Hire an Artisan
             </button>
-            <IoMenuOutline  onClick={Toggle} className="text-white text-2xl  sm:block md:hidden lg:hidden" />
+            <IoMenuOutline  onClick={Toggle} className="text-white text-2xl  sm:block md:block lg:hidden" />
 
              {/* Conditional rendering */}
            {menuOpen && (
@@ -74,7 +74,7 @@ const Header = () => {
              )}
 
 
-            <button className="hidden md:block lg:block font-[DM Sans] cursor-pointer bg-[#CC5500] text-[16px] rounded-lg text-[#FDFDFD] font-medium py-[14px] px-[32px]">
+            <button className="hidden md:hidden lg:block font-[DM Sans] cursor-pointer bg-[#CC5500] text-[16px] rounded-lg text-[#FDFDFD] font-medium py-[14px] px-[32px]">
               Become an Artisan
             </button>
           </div>
