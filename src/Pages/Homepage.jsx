@@ -4,6 +4,7 @@ import { CiSearch, CiLocationOn } from "react-icons/ci";
 import Ellipse1 from "../assets/Ellipse1.png";
 import Rounded from "../assets/Rounded.png";
 import Carousel from "../Components/Carousel";
+import sparklingline from "../assets/sparklingline.png";
 
 const Homepage = () => {
   const [name, setName] = useState("");
@@ -136,24 +137,35 @@ const Homepage = () => {
           )
         )}
 
-        {/* <img
-          className="hidden w-auto h-[530px] left-0.5  lg:block relative bottom-[350px] "
-          src={Ellipse1}
-          alt=""
-        /> */}
-
         <div
           className="hidden lg:block relative bottom-[350px] lg:w-auto lg:h-[712px] bg-no-repeat "
           style={{ backgroundImage: `url(${Ellipse1})` }}
         ></div>
 
-        {/* <div 
+        <div
           className="hidden lg:block relative bottom-[700px] left-[950px] lg:w-[312px] lg:h-[712px] bg-no-repeat"
-          style={{ backgroundImage: `url(${Rounded})`}}
-        >
-        </div> */}
+          style={{ backgroundImage: `url(${Rounded})` }}
+        ></div>
 
         <Carousel className=" " />
+      </div>
+      <div className="flex justify-between items-center bg-[#008080] w-[100%] h-[98px] px-[32px] py-[32px] ">
+        <h3 className="font-[DM Sans] font-medium text-[28px] text-[#FDFDFD]">
+          Home & Garden
+        </h3>
+        <img src={sparklingline} alt="star-link" />
+        <h3 className="font-[DM Sans] font-medium text-[28px] text-[#FDFDFD]">
+          Health & Wellbeing
+        </h3>
+        <img src={sparklingline} alt="star-link" />
+        <h3 className="font-[DM Sans] font-medium text-[28px] text-[#FDFDFD]">
+          Wedding & Events
+        </h3>
+        <img src={sparklingline} alt="star-link" />
+        <h3 className="font-[DM Sans] font-medium text-[28px] text-[#FDFDFD]">
+          Business Services{" "}
+        </h3>
+        <img src={sparklingline} alt="star-link" />
       </div>
     </div>
   );
