@@ -4,7 +4,11 @@ import { CiSearch, CiLocationOn } from "react-icons/ci";
 import Ellipse1 from "../assets/Ellipse1.png";
 import Rounded from "../assets/Rounded.png";
 import Carousel from "../Components/Carousel";
-import sparklingline from "../assets/sparklingline.png";
+// import sparklingline from "../assets/sparklingline.png";
+// import Slider from "../Components/Slider";
+import CategoryCarousel from "../Components/CategoryCarousel";
+import CategoryTabs from "../Components/CategoryTabs";
+import ArtisanType from "../Components/ArtisanType";
 
 const Homepage = () => {
   const [name, setName] = useState("");
@@ -149,23 +153,19 @@ const Homepage = () => {
 
         <Carousel className=" " />
       </div>
-      <div className="flex justify-between items-center bg-[#008080] w-[100%] h-[98px] px-[32px] py-[32px] ">
-        <h3 className="font-[DM Sans] font-medium text-[28px] text-[#FDFDFD]">
-          Home & Garden
-        </h3>
-        <img src={sparklingline} alt="star-link" />
-        <h3 className="font-[DM Sans] font-medium text-[28px] text-[#FDFDFD]">
-          Health & Wellbeing
-        </h3>
-        <img src={sparklingline} alt="star-link" />
-        <h3 className="font-[DM Sans] font-medium text-[28px] text-[#FDFDFD]">
-          Wedding & Events
-        </h3>
-        <img src={sparklingline} alt="star-link" />
-        <h3 className="font-[DM Sans] font-medium text-[28px] text-[#FDFDFD]">
-          Business Services{" "}
-        </h3>
-        <img src={sparklingline} alt="star-link" />
+
+      <CategoryCarousel />
+
+      <h2 className=" text-[32px] lg:text-[44px] font-[DM Sans] font-semibold mt-[64px] lg:mt-[104px] ml-[20px] mr-[20px] lg:mx-[100px] text-[#36454F]">
+        Discover Popular Search Categories
+      </h2>
+      <CategoryTabs />
+
+      <ArtisanType />
+      <div className="flex justify-center items-center">
+        <button className="bg-[#CC5500] px-[24px] py-[16px] rounded-4xl text-[#FDFDFD] font-semibold text-[18px] font-[DM Sans]">
+          View All Home & Garden
+        </button>
       </div>
     </div>
   );

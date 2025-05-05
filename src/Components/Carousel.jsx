@@ -1,28 +1,27 @@
-import React from 'react';
-import Slider from 'react-slick';
-import clean from '../assets/clean.png';
-import paint from '../assets/paint.png';
-import pest from '../assets/pest.png';
-import gardener from '../assets/gardener.png';
+import React from "react";
+import Slider from "react-slick";
+import clean from "../assets/clean.png";
+import paint from "../assets/paint.png";
+import pest from "../assets/pest.png";
+import gardener from "../assets/gardener.png";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-
 const services = [
   {
-    name: 'Cleaning',
+    name: "Cleaning",
     image: clean,
   },
   {
-    name: 'Painting & Decorating',
+    name: "Painting & Decorating",
     image: paint,
   },
   {
-    name: 'Pest Control',
+    name: "Pest Control",
     image: pest,
   },
   {
-    name: 'Gardeners',
+    name: "Gardeners",
     image: gardener,
   },
 ];
@@ -31,7 +30,7 @@ const Carousel = () => {
   const settings = {
     // dots: true,
     // infinite: true,
-    arrows: false,  // Add this line
+    arrows: false, // Add this line
     speed: 500,
     slidesToShow: 4,
     slidesToScroll: 1,
