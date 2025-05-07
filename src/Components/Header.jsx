@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <div>
       <div className="w-[100%] h-[92px] bg-[#004646]">
-        <div className="flex justify-between items-center pt-[20px] lg:ml-[100px] lg:mr-[100px]  ">
+        <div className="flex justify-between items-center pt-[20px]   lg:ml-[100px] lg:mr-[100px]  ">
           <div className="flex justify-center items-center  ml-2.5">
             <LuTextSearch className="text-white text-2xl lg:text-3xl cursor-pointer" />
             <h6 className="font-[DM Sans]  cursor-pointer font-bold text-[17.15px] text-[#E6F2F2] lg:text-[28.45px]">

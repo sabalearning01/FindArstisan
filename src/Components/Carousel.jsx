@@ -59,7 +59,7 @@ const Carousel = () => {
   };
 
   return (
-    <div className="px-6 relative top-[50px]  lg:top-[-1100px]">
+    <div className="px-6 relative top-[50px]  lg:top-[-1300px]">
       <Slider {...settings}>
         {services.map((service, index) => (
           <div key={index} className="px-2">

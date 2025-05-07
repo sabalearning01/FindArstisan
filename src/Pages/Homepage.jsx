@@ -9,6 +9,7 @@ import Carousel from "../Components/Carousel";
 import CategoryCarousel from "../Components/CategoryCarousel";
 import CategoryTabs from "../Components/CategoryTabs";
 import ArtisanType from "../Components/ArtisanType";
+import ArtisanTypeSmall from "../Components/ArtisanTypeSmall";
 
 const Homepage = () => {
   const [name, setName] = useState("");
@@ -122,7 +123,7 @@ const Homepage = () => {
           </form>
         </div>
 
-        {error && <div className="mt-4 text-red-500 text-center">{error}</div>}
+        {/* {error && <div className="mt-4 text-red-500 text-center">{error}</div>}
 
         {isLoading ? (
           <div className="mt-4 text-white text-center">Loading...</div>
@@ -139,15 +140,24 @@ const Homepage = () => {
               </ul>
             </div>
           )
-        )}
+        )} */}
+       <div className=" relative z-50  md:flex   justify-center items-center  mt-[16px] lg:mt-[16px]">
+        <p className="font-[DM Sans] font-medium text-[16px] lg:text-[18px] text-white">Last Search:</p>
+        <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">BrickLayer</button>
+        <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">Rewire Mechanic</button>
+        <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">Electrician</button>
+        <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">Carpenter</button>
+        <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">Solar</button>
+       </div>
+       
 
         <div
-          className="hidden lg:block relative bottom-[350px] lg:w-auto lg:h-[712px] bg-no-repeat "
+          className="hidden lg:block relative bottom-[300px] lg:w-auto lg:h-[712px] bg-no-repeat "
           style={{ backgroundImage: `url(${Ellipse1})` }}
         ></div>
 
         <div
-          className="hidden lg:block relative bottom-[700px] left-[950px] lg:w-[312px] lg:h-[712px] bg-no-repeat"
+          className="hidden lg:block relative bottom-[750px] left-[950px] lg:w-[312px] lg:h-[712px] bg-no-repeat"
           style={{ backgroundImage: `url(${Rounded})` }}
         ></div>
 
@@ -159,14 +169,15 @@ const Homepage = () => {
       <h2 className=" text-[32px] lg:text-[44px] font-[DM Sans] font-semibold mt-[64px] lg:mt-[104px] ml-[20px] mr-[20px] lg:mx-[100px] text-[#36454F]">
         Discover Popular Search Categories
       </h2>
-      <CategoryTabs />
+      {/* <CategoryTabs /> */}
 
-      <ArtisanType />
+      {/* <ArtisanType />
+      <ArtisanTypeSmall/>
       <div className="flex justify-center items-center">
-        <button className="bg-[#CC5500] px-[24px] py-[16px] rounded-4xl text-[#FDFDFD] font-semibold text-[18px] font-[DM Sans]">
+        <button className="cursor-pointer bg-[#CC5500] px-[24px] py-[16px] rounded-4xl text-[#FDFDFD] font-semibold text-[18px] font-[DM Sans]">
           View All Home & Garden
         </button>
-      </div>
+      </div> */}
     </div>
   );
 };
