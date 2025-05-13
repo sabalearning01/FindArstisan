@@ -10,7 +10,9 @@ import CategoryCarousel from "../Components/CategoryCarousel";
 import CategoryTabs from "../Components/CategoryTabs";
 import ArtisanType from "../Components/ArtisanType";
 import ArtisanTypeSmall from "../Components/ArtisanTypeSmall";
-
+import SearchCategories from "../Components/SearchCategories";
+import CardCarousel from "../Components/CardCarousel";
+import Card from "../Components/Card";
 const Homepage = () => {
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
@@ -141,15 +143,26 @@ const Homepage = () => {
             </div>
           )
         )} */}
-       <div className=" relative z-50  md:flex   justify-center items-center  mt-[16px] lg:mt-[16px]">
-        <p className="font-[DM Sans] font-medium text-[16px] lg:text-[18px] text-white">Last Search:</p>
-        <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">BrickLayer</button>
-        <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">Rewire Mechanic</button>
-        <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">Electrician</button>
-        <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">Carpenter</button>
-        <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">Solar</button>
-       </div>
-       
+        <div className=" relative z-50  md:flex   justify-center items-center  mt-[16px] lg:mt-[16px]">
+          <p className="font-[DM Sans] font-medium text-[16px] lg:text-[18px] text-white">
+            Last Search:
+          </p>
+          <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">
+            BrickLayer
+          </button>
+          <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">
+            Rewire Mechanic
+          </button>
+          <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">
+            Electrician
+          </button>
+          <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">
+            Carpenter
+          </button>
+          <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">
+            Solar
+          </button>
+        </div>
 
         <div
           className="hidden lg:block relative bottom-[300px] lg:w-auto lg:h-[712px] bg-no-repeat "
@@ -169,15 +182,58 @@ const Homepage = () => {
       <h2 className=" text-[32px] lg:text-[44px] font-[DM Sans] font-semibold mt-[64px] lg:mt-[104px] ml-[20px] mr-[20px] lg:mx-[100px] text-[#36454F]">
         Discover Popular Search Categories
       </h2>
+      <SearchCategories />
       {/* <CategoryTabs /> */}
 
-      {/* <ArtisanType />
-      <ArtisanTypeSmall/>
-      <div className="flex justify-center items-center">
-        <button className="cursor-pointer bg-[#CC5500] px-[24px] py-[16px] rounded-4xl text-[#FDFDFD] font-semibold text-[18px] font-[DM Sans]">
+      <ArtisanType />
+      <ArtisanTypeSmall />
+      <div className=" flex justify-center items-center">
+        <button className="mt-[40px] cursor-pointer bg-[#CC5500] px-[24px] py-[16px] rounded-4xl text-[#FDFDFD] font-semibold text-[18px] font-[DM Sans]">
           View All Home & Garden
         </button>
-      </div> */}
+      </div>
+
+      <div className=" flex justify-between items-center mx-[100px] my-[100px] mt-[52px]">
+        <h2 className="hidden lg:block font-[DM Sans] cursor-pointer font-semibold  lg:text-[44px] text-[#36454F]">
+          Recently Used Services
+        </h2>
+
+        <button className="hidden lg:block bg-[#CC5500] cursor-pointer rounded-4xl text-[#FDFDFD] font-semibold text-[18px] px-[24px] py-[16px] ">
+          View All Artisans
+        </button>
+      </div>
+
+      <h2 className="block lg:hidden mx-[20px] my-[20px] font-[DM Sans] text-[32px] font-bold text-[#36454F]">
+        Recently Used Services
+      </h2>
+
+      <ArtisanType className="mt-[62px]" />
+      <ArtisanType className="mt-[40px]" />
+
+      <CategoryCarousel className="mt-[104px]" />
+      <div className="w-[100%] h-[872px] bg-[#003636]">
+        <h3 className="   text-center font-bold lg:font-semibold text-[#FDFDFD] font-[DM Sans] text-[32px] lg:text-[44px] pt-[104px]">
+          What Our Customers Say
+        </h3>
+        <h5 className=" text-center mt-[16px] text-[#EFCAB0] text-[16px] font-semibold lg:text-[20px] lg:font-medium font-[DM Sans]">
+          Real stories from people who’ve hired top artisans through us
+        </h5>
+
+        <CardCarousel />
+      </div>
+      <CategoryCarousel />
+      <div className="hidden lg:block bg-[#003636] w-[100%] h-[604px]">
+        <h3 className="text-[#FDFDFD] text-center pt-[104px] text-[44px]">
+          What Our Artisans Are Saying
+        </h3>
+        <h5 className="text-center font-medium text-[20px] lg:pt-[16px]  text-[#EFCAB0]">
+          Real stories from who is working with us
+        </h5>
+        <Card />
+      </div>
+     <CategoryCarousel/>
+     <h3 className="font-[DM Sans] text-[36px] font-bold text-center mt-[64px] lg:mt-[104px] text-[#36454F] lg:font-medium lg:text-[44px]">Got any questions?</h3>
+     <h1 className="lg:mt-[8px] lg:font-medium lg:text-[36px] text-center text-[#54AAAA]">We’ve got answer.</h1>
     </div>
   );
 };

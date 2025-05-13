@@ -41,3 +41,39 @@ function App() {
 
 export default App;
 
+
+
+// import { Routes, Route } from "react-router-dom";
+// import Homepage from "./Pages/Homepage";
+// import Login from "./Pages/Auth/Login";
+// import ProtectedPage from "./Pages/ProtectedPage";
+// import Carousel from "./Components/Carousel";
+// // import RootLayout from "./layouts/RootLayout";
+// // import ProtectedRoute from "./Components/ProtectedRoute";
+
+// function App() {
+//   return (
+//     <Routes>
+//       {/* Layout with Header & Footer */}
+//       <Route element={<RootLayout />}>
+//         <Route index element={<Homepage />} />
+//         <Route path="/carousel" element={<Carousel />} />
+
+//         {/* Protected Route inside Layout */}
+//         <Route
+//           path="/protected"
+//           element={
+//             <ProtectedRoute>
+//               <ProtectedPage />
+//             </ProtectedRoute>
+//           }
+//         />
+//       </Route>
+
+//       {/* Auth page without layout */}
+//       <Route path="/login" element={<Login />} />
+//     </Routes>
+//   );
+// }
+
+// export default App;
