@@ -13,6 +13,8 @@ import ArtisanTypeSmall from "../Components/ArtisanTypeSmall";
 import SearchCategories from "../Components/SearchCategories";
 import CardCarousel from "../Components/CardCarousel";
 import Card from "../Components/Card";
+import Users from "../Components/Users";
+import Artisan from "../Components/Artisan";
 const Homepage = () => {
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
@@ -52,7 +54,7 @@ const Homepage = () => {
 
   return (
     <div>
-      <Header />
+      {/* <Header /> */}
       <div className="bg-[#004646] w-[100%] h-[1090px] lg:h-[1210px]">
         <h2 className="font-[DM Sans] font-bold lg:font-semibold pt-[61px] lg:pt-[91px] text-[32px]  lg:text-[62px] text-white text-center mx-[20px] lg:mx-[273px]">
           Hire <span className="text-[#E8B18A]">verified</span> &{" "}
@@ -234,6 +236,17 @@ const Homepage = () => {
      <CategoryCarousel/>
      <h3 className="font-[DM Sans] text-[36px] font-bold text-center mt-[64px] lg:mt-[104px] text-[#36454F] lg:font-medium lg:text-[44px]">Got any questions?</h3>
      <h1 className="lg:mt-[8px] lg:font-medium lg:text-[36px] text-center text-[#54AAAA]">We’ve got answer.</h1>
+    
+    <div className="flex justify-center items-center mt-[79px]  gap-[200px]">
+    <h1 className="font-[DM Sans] font-medium text-[36px]">For Artisans</h1>
+    <h1 className="font-[DM Sans] font-medium text-[36px]">For Users</h1>
+    </div>
+
+        <div className="flex justify-center items-center gap-[10px]">
+          <Artisan/>
+          <Users/>
+        </div>
+       
     </div>
   );
 };
