@@ -15,6 +15,15 @@ import CardCarousel from "../Components/CardCarousel";
 import Card from "../Components/Card";
 import Users from "../Components/Users";
 import Artisan from "../Components/Artisan";
+import { FaArrowRight } from "react-icons/fa6";
+import carpentry from '../assets/carpentry.png';
+import Cleaninglady from '../assets/Cleaninglady.png';
+import Manwithtools from '../assets/Manwithtools.png';
+import Plumber from '../assets/Plumber.png';
+import teal from '../assets/teal.png';
+import Orange from '../assets/Orange.png';
+import wieldering from '../assets/wieldering.png';
+
 const Homepage = () => {
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
@@ -233,20 +242,81 @@ const Homepage = () => {
         </h5>
         <Card />
       </div>
-     <CategoryCarousel/>
-     <h3 className="font-[DM Sans] text-[36px] font-bold text-center mt-[64px] lg:mt-[104px] text-[#36454F] lg:font-medium lg:text-[44px]">Got any questions?</h3>
-     <h1 className="lg:mt-[8px] lg:font-medium lg:text-[36px] text-center text-[#54AAAA]">We’ve got answer.</h1>
-    
-    <div className="flex justify-center items-center mt-[79px]  gap-[200px]">
-    <h1 className="font-[DM Sans] font-medium text-[36px]">For Artisans</h1>
-    <h1 className="font-[DM Sans] font-medium text-[36px]">For Users</h1>
-    </div>
+      <CategoryCarousel />
+      <h3 className="font-[DM Sans] text-[36px] font-bold text-center mt-[64px] lg:mt-[104px] text-[#36454F] lg:font-medium lg:text-[44px]">
+        Got any questions?
+      </h3>
+      <h1 className="lg:mt-[8px] lg:font-medium lg:text-[36px] text-center text-[#54AAAA]">
+        We’ve got answer.
+      </h1>
 
-        <div className="flex justify-center items-center gap-[10px]">
-          <Artisan/>
-          <Users/>
+      <div className="flex justify-center items-center mt-[79px]  gap-[200px]">
+        <h1 className="font-[DM Sans] font-medium text-[36px]">For Artisans</h1>
+        <h1 className="font-[DM Sans] font-medium text-[36px]">For Users</h1>
+      </div>
+
+      <div className="flex justify-center items-center gap-[10px]">
+        <Artisan />
+        <Users />
+      </div>
+
+      <div className="flex items-center mt-[104px]">
+        <div>
+        <h2 className="font-[DM Sans] font-bold text-[52px]">
+          Looking to boost your earnings?
+          <span className="text-[#008080]">Join our team of skilled artisans</span> <span className="text-[#CC5500]">today!</span>
+        </h2> 
+        
+        <button className=" bg-[#CC5500] rounded-lg text-[14px] font-medium px-[48px] py-[18px] gap-1.5 text-[#FDFDFD] flex justify-center items-center">Join us today  <FaArrowRight /> </button>
         </div>
-       
+     
+        <div className="grid grid-cols-3 grid-rows-3 gap-4 max-w-4xl mx-auto p-4">
+          <div class="grid grid-cols-3 grid-rows-3 gap-4 max-w-4xl mx-auto p-4">
+  {/* <!-- Top Left Image --> */}
+  <div class="rounded-lg overflow-hidden">
+    <img src={carpentry} alt="carpentry image" className="w-full h-full object-cover" />
+  </div>
+
+  {/* <!-- Top Center Color Block --> */}
+  <div class=" rounded-lg">
+    <img src={Orange} alt="orange"/>
+  </div>
+
+  {/* <!-- Top Right Image --> */}
+  <div class="rounded-lg overflow-hidden">
+    <img src={Cleaninglady} alt="Worker 2" class="w-full h-full object-cover" />
+  </div>
+
+  {/* <!-- Middle Left Image --> */}
+  <div class="rounded-lg overflow-hidden">
+    <img src={wieldering} alt="Worker 3" class="w-full h-full object-cover" />
+  </div>
+
+  {/* <!-- Center Image (Main) --> */}
+  <div class="rounded-lg overflow-hidden row-span-1">
+    <img src={Manwithtools} alt="Worker 4" class="w-full h-full object-cover" />
+  </div>
+
+  {/* <!-- Middle Right Image --> */}
+  <div className="rounded-lg overflow-hidden">
+    <img src={Plumber} alt="Worker 5" class="w-full h-full object-cover" />
+  </div>
+
+  {/* <!-- Bottom Left Color Block --> */}
+  <div classNameName="bg-[#007C80] rounded-lg"></div>
+
+  {/* <!-- Bottom Center Spacer or empty --> */}
+  <div className=" rounded-lg">
+    <img src={teal}/>
+  </div>
+
+  {/* <!-- Bottom Right Color Block --> */}
+  {/* <div class="bg-[#007C80] rounded-lg"></div> */}
+</div>
+
+        </div>
+
+      </div>
     </div>
   );
 };
