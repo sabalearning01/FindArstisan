@@ -16,13 +16,14 @@ import Card from "../Components/Card";
 import Users from "../Components/Users";
 import Artisan from "../Components/Artisan";
 import { FaArrowRight } from "react-icons/fa6";
-import carpentry from '../assets/carpentry.png';
-import Cleaninglady from '../assets/Cleaninglady.png';
-import Manwithtools from '../assets/Manwithtools.png';
-import Plumber from '../assets/Plumber.png';
-import teal from '../assets/teal.png';
-import Orange from '../assets/Orange.png';
-import wieldering from '../assets/wieldering.png';
+import carpentry from "../assets/carpentry.png";
+import Cleaninglady from "../assets/Cleaninglady.png";
+import Manwithtools from "../assets/Manwithtools.png";
+import Plumber from "../assets/Plumber.png";
+import teal from "../assets/teal.png";
+import Orange from "../assets/Orange.png";
+import wieldering from "../assets/wieldering.png";
+import MobileCarousel from "../Components/MobileCarousel";
 
 const Homepage = () => {
   const [name, setName] = useState("");
@@ -66,8 +67,8 @@ const Homepage = () => {
       {/* <Header /> */}
       <div className="bg-[#004646] w-[100%] h-[1090px] lg:h-[1210px]">
         <h2 className="font-[DM Sans] font-bold lg:font-semibold pt-[61px] lg:pt-[91px] text-[32px]  lg:text-[62px] text-white text-center mx-[20px] lg:mx-[273px]">
-          Hire <span className="text-[#E8B18A]">verified</span> &{" "}
-          <span className="text-[#E8B18A]">Artisans</span> trusted with reviews.
+          Hire <span className="text-[#E8B18A]">verified <span className="text-[#ffff]"> & </span>trusted </span> 
+          Artisans with reviews.
         </h2>
 
         <div className="w-[90%] relative z-10 h-[200px] lg:w-[790px] lg:h-[88px] rounded-lg mt-[64px] m-auto bg-[#FDFDFD]">
@@ -190,7 +191,7 @@ const Homepage = () => {
 
       <CategoryCarousel />
 
-      <h2 className=" text-[32px] lg:text-[44px] font-[DM Sans] font-semibold mt-[64px] lg:mt-[104px] ml-[20px] mr-[20px] lg:mx-[100px] text-[#36454F]">
+      <h2 className=" text-[32px] lg:text-[44px] font-[DM Sans] font-bold  lg:font-semibold mt-[64px] lg:mt-[104px] ml-[20px] mr-[20px] lg:mx-[100px] text-[#36454F]">
         Discover Popular Search Categories
       </h2>
       <SearchCategories />
@@ -218,11 +219,17 @@ const Homepage = () => {
         Recently Used Services
       </h2>
 
+      <MobileCarousel />
+
       <ArtisanType className="mt-[62px]" />
       <ArtisanType className="mt-[40px]" />
 
-      <CategoryCarousel className="mt-[104px]" />
-      <div className="w-[100%] h-[872px] bg-[#003636]">
+      {/* <CategoryCarousel className=" lg:mt-[104px]" /> */}
+      <button className="w-[263px] cursor-pointer lg:hidden block text-[18px] font-medium font-[DM Sans] bg-[#CC5500] text-[#FDFDFD] mx-auto mt-[90px] px-[24px] py-[15px] rounded-4xl">
+        View All Artist
+      </button>
+
+      <div className="w-[100%] h-[872px] mt-[64px] bg-[#003636]">
         <h3 className="   text-center font-bold lg:font-semibold text-[#FDFDFD] font-[DM Sans] text-[32px] lg:text-[44px] pt-[104px]">
           What Our Customers Say
         </h3>
@@ -242,7 +249,7 @@ const Homepage = () => {
         </h5>
         <Card />
       </div>
-      <CategoryCarousel />
+      {/* <CategoryCarousel /> */}
       <h3 className="font-[DM Sans] text-[36px] font-bold text-center mt-[64px] lg:mt-[104px] text-[#36454F] lg:font-medium lg:text-[44px]">
         Got any questions?
       </h3>
@@ -250,72 +257,90 @@ const Homepage = () => {
         We’ve got answer.
       </h1>
 
-      <div className="flex justify-center items-center mt-[79px]  gap-[200px]">
+      <div className=" hidden lg:flex justify-center items-center mt-[79px]  gap-[200px]">
         <h1 className="font-[DM Sans] font-medium text-[36px]">For Artisans</h1>
         <h1 className="font-[DM Sans] font-medium text-[36px]">For Users</h1>
       </div>
 
-      <div className="flex justify-center items-center gap-[10px]">
+      <div className=" hidden lg:flex justify-center items-center gap-[10px]">
         <Artisan />
         <Users />
       </div>
 
-      <div className="flex items-center mt-[104px]">
+      <div className="flex flex-col-reverse justify-between items-center mt-[119px] mx-[100px] my-[100px]">
         <div>
-        <h2 className="font-[DM Sans] font-bold text-[52px]">
-          Looking to boost your earnings?
-          <span className="text-[#008080]">Join our team of skilled artisans</span> <span className="text-[#CC5500]">today!</span>
-        </h2> 
-        
-        <button className=" bg-[#CC5500] rounded-lg text-[14px] font-medium px-[48px] py-[18px] gap-1.5 text-[#FDFDFD] flex justify-center items-center">Join us today  <FaArrowRight /> </button>
-        </div>
-     
-        <div className="grid grid-cols-3 grid-rows-3 gap-4 max-w-4xl mx-auto p-4">
-          <div class="grid grid-cols-3 grid-rows-3 gap-4 max-w-4xl mx-auto p-4">
-  {/* <!-- Top Left Image --> */}
-  <div class="rounded-lg overflow-hidden">
-    <img src={carpentry} alt="carpentry image" className="w-full h-full object-cover" />
-  </div>
+          <h2 className="w-[300px] font-[DM Sans] font-bold text-[36px] lg:text-[52px]">
+            Looking to boost your earnings?
+            <span className="text-[#008080]">
+              Join our team of skilled artisans
+            </span>{" "}
+            <span className="text-[#CC5500]">today!</span>
+          </h2>
 
-  {/* <!-- Top Center Color Block --> */}
-  <div class=" rounded-lg">
-    <img src={Orange} alt="orange"/>
-  </div>
-
-  {/* <!-- Top Right Image --> */}
-  <div class="rounded-lg overflow-hidden">
-    <img src={Cleaninglady} alt="Worker 2" class="w-full h-full object-cover" />
-  </div>
-
-  {/* <!-- Middle Left Image --> */}
-  <div class="rounded-lg overflow-hidden">
-    <img src={wieldering} alt="Worker 3" class="w-full h-full object-cover" />
-  </div>
-
-  {/* <!-- Center Image (Main) --> */}
-  <div class="rounded-lg overflow-hidden row-span-1">
-    <img src={Manwithtools} alt="Worker 4" class="w-full h-full object-cover" />
-  </div>
-
-  {/* <!-- Middle Right Image --> */}
-  <div className="rounded-lg overflow-hidden">
-    <img src={Plumber} alt="Worker 5" class="w-full h-full object-cover" />
-  </div>
-
-  {/* <!-- Bottom Left Color Block --> */}
-  <div classNameName="bg-[#007C80] rounded-lg"></div>
-
-  {/* <!-- Bottom Center Spacer or empty --> */}
-  <div className=" rounded-lg">
-    <img src={teal}/>
-  </div>
-
-  {/* <!-- Bottom Right Color Block --> */}
-  {/* <div class="bg-[#007C80] rounded-lg"></div> */}
-</div>
-
+          <button className="cursor-pointer mt-[24px] bg-[#CC5500] rounded-lg text-[14px] font-medium px-[48px] py-[18px] gap-1.5 text-[#FDFDFD] flex justify-center items-center">
+            Join us today <FaArrowRight />{" "}
+          </button>
         </div>
 
+        <div class="grid grid-cols-3 grid-rows-3 gap-4 max-w-4xl mx-auto p-4">
+          {/* <!-- Top Left Image --> */}
+          <div class="rounded-lg overflow-hidden">
+            <img
+              src={carpentry}
+              alt="carpentry image"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* <!-- Top Center Color Block --> */}
+          <div className=" rounded-lg">
+            <img src={Orange} alt="orange background" />
+          </div>
+
+          {/* <!-- Top Right Image --> */}
+          <div className="rounded-lg overflow-hidden">
+            <img
+              src={Cleaninglady}
+              alt="Female Artisan image"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* <!-- Middle Left Image --> */}
+          <div className="rounded-lg overflow-hidden">
+            <img
+              src={wieldering}
+              alt="Wielding image"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* <!-- Center Image (Main) --> */}
+          <div className="rounded-lg overflow-hidden row-span-1">
+            <img
+              src={Manwithtools}
+              alt="Man with tools image"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* <!-- Middle Right Image --> */}
+          <div className="rounded-lg overflow-hidden">
+            <img
+              src={Plumber}
+              alt="Plumber image"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* <!-- Bottom Left Color Block --> */}
+          <div className=" rounded-lg"></div>
+
+          {/* <!-- Bottom Center Spacer or empty --> */}
+          <div className="rounded-lg">
+            <img src={teal} alt="teal background" />
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -68,7 +68,7 @@ const Header = () => {
 
              {/* Conditional rendering */}
            {menuOpen && (
-            <div onClick={Toggle} className="bg-black text-white w-full h-[250px] absolute top-20 left-0  flex justify-center items-center z-40">
+            <div onClick={Toggle} className="bg-black text-white w-[80%] h-[250px] absolute top-20 left-0  flex justify-center items-center z-40">
              <h3>Great</h3>
             </div>
              )}

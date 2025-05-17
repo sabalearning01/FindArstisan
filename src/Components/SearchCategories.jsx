@@ -38,7 +38,7 @@ const SearchCategories = () => {
   };
 
   return (
-    <div className='bg-[#F8F8E8]  lg:w-[85%] py-4 px-4 rounded-full lg:mx-[100px] lg:my-[100px]'>
+    <div className='bg-[#F8F8E8]  ml-[20px] mt-[40px] w-[90%] lg:w-[85%] py-4 px-4 rounded-full lg:mx-[100px] lg:my-[100px]'>
       <Slider {...settings}>
         {searchcategories.map((category, index) => (
           <div key={index} className="px-2 ">
