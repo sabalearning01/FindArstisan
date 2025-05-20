@@ -67,7 +67,10 @@ const Homepage = () => {
       {/* <Header /> */}
       <div className="bg-[#004646] w-[100%] h-[1090px] lg:h-[1210px]">
         <h2 className="font-[DM Sans] font-bold lg:font-semibold pt-[61px] lg:pt-[91px] text-[32px]  lg:text-[62px] text-white text-center mx-[20px] lg:mx-[273px]">
-          Hire <span className="text-[#E8B18A]">verified <span className="text-[#ffff]"> & </span>trusted </span> 
+          Hire{" "}
+          <span className="text-[#E8B18A]">
+            verified <span className="text-[#ffff]"> & </span>trusted{" "}
+          </span>
           Artisans with reviews.
         </h2>
 
@@ -155,8 +158,8 @@ const Homepage = () => {
             </div>
           )
         )} */}
-        <div className=" relative z-50  md:flex   justify-center items-center  mt-[16px] lg:mt-[16px]">
-          <p className="font-[DM Sans] font-medium text-[16px] lg:text-[18px] text-white">
+        <div className=" relative z-50 gap-y-7.5  md:flex   justify-center items-center  mt-[16px] lg:mt-[16px]">
+          <p className="font-[DM Sans] ml-[20px]  font-medium text-[16px] lg:text-[18px] text-white">
             Last Search:
           </p>
           <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">
@@ -265,11 +268,11 @@ const Homepage = () => {
       <div className=" hidden lg:flex justify-center items-center gap-[10px]">
         <Artisan />
         <Users />
-      </div>
+       </div>
 
-      <div className="flex flex-col-reverse justify-between items-center mt-[119px] mx-[100px] my-[100px]">
-        <div>
-          <h2 className="w-[300px] font-[DM Sans] font-bold text-[36px] lg:text-[52px]">
+      <div className="flex lg:flex-row  flex-col-reverse lg:justify-between  items-center  lg:mx-[100px] lg:my-[100px]">
+        <div className="mx-[20px] my-[20px]">
+          <h2 className=" font-[DM Sans] font-bold text-[36px] lg:text-[52px]">
             Looking to boost your earnings?
             <span className="text-[#008080]">
               Join our team of skilled artisans
@@ -282,19 +285,19 @@ const Homepage = () => {
           </button>
         </div>
 
-        <div class="grid grid-cols-3 grid-rows-3 gap-4 max-w-4xl mx-auto p-4">
+        <div class=" w-[100%]  grid grid-cols-3 grid-rows-3 gap-4 max-w-4xl mx-auto p-4">
           {/* <!-- Top Left Image --> */}
           <div class="rounded-lg overflow-hidden">
             <img
               src={carpentry}
               alt="carpentry image"
-              className="w-full h-full object-cover"
+              className="w-[190px] h-[290px] object-cover"
             />
           </div>
 
           {/* <!-- Top Center Color Block --> */}
           <div className=" rounded-lg">
-            <img src={Orange} alt="orange background" />
+            <img className="w-[190px] h-[101px]" src={Orange} alt="orange background" />
           </div>
 
           {/* <!-- Top Right Image --> */}
@@ -302,7 +305,7 @@ const Homepage = () => {
             <img
               src={Cleaninglady}
               alt="Female Artisan image"
-              className="w-full h-full object-cover"
+              className="w-[190px] h-[290px] object-cover"
             />
           </div>
 
@@ -311,16 +314,16 @@ const Homepage = () => {
             <img
               src={wieldering}
               alt="Wielding image"
-              className="w-full h-full object-cover"
+              className="w-[190px] h-[290.5px]  object-cover"
             />
           </div>
 
           {/* <!-- Center Image (Main) --> */}
-          <div className="rounded-lg overflow-hidden row-span-1">
+          <div className="rounded-lg overflow-hidden row-span-1 mb-[-300px]">
             <img
               src={Manwithtools}
               alt="Man with tools image"
-              className="w-full h-full object-cover"
+              className="w-[190px] h-[355px] object-cover"
             />
           </div>
 
@@ -329,7 +332,7 @@ const Homepage = () => {
             <img
               src={Plumber}
               alt="Plumber image"
-              className="w-full h-full object-cover"
+              className="w-[190px]  h-[290.5px] object-cover"
             />
           </div>
 
@@ -337,7 +340,7 @@ const Homepage = () => {
           <div className=" rounded-lg"></div>
 
           {/* <!-- Bottom Center Spacer or empty --> */}
-          <div className="rounded-lg">
+          <div className="rounded-lg mt-[64px]">
             <img src={teal} alt="teal background" />
           </div>
         </div>

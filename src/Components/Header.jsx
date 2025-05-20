@@ -25,7 +25,7 @@ const Header = () => {
                 </h5>
                 <MdArrowDropDown className="text-[#FDFDFD] mt-[5px]" />
               </div> */}
-              <div className="relative md:hidden inline-block text-left group">
+              <div className="relative lg:block md:hidden inline-block text-left group">
                 <button className="inline-flex items-center text-white font-semibold">
                   Explore Services
                   <MdArrowDropDown className="text-[#FDFDFD] mt-[5px]" />

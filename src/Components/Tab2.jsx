@@ -337,20 +337,48 @@ const Tab2 = () => {
     }
   };
 
+
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      await validationSchema.validate(formData, { abortEarly: false });
-      console.log("Form Data:", formData);
-      setErrors({});
-    } catch (err) {
+  e.preventDefault();
+
+  try {
+    await validationSchema.validate(formData, { abortEarly: false });
+    console.log("Form Data:", formData);
+    setErrors({});
+
+    // Send login request
+    const response = await fetch("https://artisan-dic2.onrender.com/auth/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const data = await response.json();
+    
+    console.log(data)
+
+    if (response.ok) {
+      console.log("Login successful:", data);
+      // You can store token or redirect the user here
+    } else {
+      console.error("Login failed:", data.message);
+      // Optionally show this in UI
+    }
+  } catch (err) {
+    if (err.name === "ValidationError") {
       const formErrors = {};
       err.inner.forEach((e) => {
         formErrors[e.path] = e.message;
       });
       setErrors(formErrors);
+    } else {
+      console.error("Unexpected error:", err);
     }
-  };
+  }
+};
+
 
   const togglePasswordVisibility = () => {
     setShowPassword(!showPassword);
@@ -416,8 +444,9 @@ const Tab2 = () => {
         {errors.password && <p className="text-red-500 ml-[20px] mt-1">{errors.password}</p>}
 
         <button
+         onClick={handleSubmit}
           type="submit"
-          className="w-[100%] md:w-[100%] bg-[#BA4D00] px-[32px] py-[17px]  mt-[28px] rounded-lg text-[18px] font-semibold text-white"
+          className="w-[100%] cursor-pointer md:w-[100%] bg-[#BA4D00] px-[32px] py-[17px]  mt-[28px] rounded-lg text-[18px] font-semibold text-white"
         >
           Login
         </button>
