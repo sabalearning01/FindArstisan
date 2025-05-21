@@ -24,6 +24,7 @@ import teal from "../assets/teal.png";
 import Orange from "../assets/Orange.png";
 import wieldering from "../assets/wieldering.png";
 import MobileCarousel from "../Components/MobileCarousel";
+import CardWithTab from "../Components/CardWithTab";
 
 const Homepage = () => {
   const [name, setName] = useState("");
@@ -251,6 +252,7 @@ const Homepage = () => {
           Real stories from who is working with us
         </h5>
         <Card />
+       
       </div>
       {/* <CategoryCarousel /> */}
       <h3 className="font-[DM Sans] text-[36px] font-bold text-center mt-[64px] lg:mt-[104px] text-[#36454F] lg:font-medium lg:text-[44px]">
@@ -259,6 +261,8 @@ const Homepage = () => {
       <h1 className="lg:mt-[8px] lg:font-medium lg:text-[36px] text-center text-[#54AAAA]">
         We’ve got answer.
       </h1>
+
+       <CardWithTab/>
 
       <div className=" hidden lg:flex justify-center items-center mt-[79px]  gap-[200px]">
         <h1 className="font-[DM Sans] font-medium text-[36px]">For Artisans</h1>
@@ -285,9 +289,9 @@ const Homepage = () => {
           </button>
         </div>
 
-        <div class=" w-[100%]  grid grid-cols-3 grid-rows-3 gap-4 max-w-4xl mx-auto p-4">
+        <div className=" w-[100%]  grid grid-cols-3 grid-rows-3 gap-4 max-w-4xl mx-auto p-4">
           {/* <!-- Top Left Image --> */}
-          <div class="rounded-lg overflow-hidden">
+          <div className="rounded-lg overflow-hidden">
             <img
               src={carpentry}
               alt="carpentry image"
