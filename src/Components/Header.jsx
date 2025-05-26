@@ -4,9 +4,15 @@ import { MdArrowDropDown } from "react-icons/md";
 import { IoMenuOutline } from "react-icons/io5";
 const Header = () => {
   const [menuOpen, setIsMenuOpen] = useState(false);
+  const [selectOption, setSelectOption] = useState("Explore Services");
 
   const Toggle = () => {
-    setIsMenuOpen(prevState=> !prevState);
+    setIsMenuOpen((prevState) => !prevState);
+  };
+
+  const handleSelectOption = (option) => {
+    setSelectOption(option);
+    console.log(option);
   };
 
   return (
@@ -19,13 +25,7 @@ const Header = () => {
               Findartisan
             </h6>
             <div className="hidden md:block lg:block ml-[35px] mt-[5px]">
-              {/* <div className="flex justify-center items-center ]">
-                <h5 className="font-[DM Sans] text-[#FDFDFD] font-medium text-[16px]">
-                  Explore Services
-                </h5>
-                <MdArrowDropDown className="text-[#FDFDFD] mt-[5px]" />
-              </div> */}
-              <div className="relative md:hidden inline-block text-left group">
+              <div className="relative lg:block md:hidden inline-block text-left group">
                 <button className="inline-flex items-center text-white font-semibold">
                   Explore Services
                   <MdArrowDropDown className="text-[#FDFDFD] mt-[5px]" />
@@ -35,44 +35,56 @@ const Header = () => {
                   <a
                     href="#"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => handleSelectOption("Web Development")}
                   >
                     Web Development
                   </a>
                   <a
                     href="#"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => handleSelectOption("Graphic Design")}
                   >
                     Graphic Design
                   </a>
                   <a
                     href="#"
                     className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    onClick={() => handleSelectOption("SEO Services")}
                   >
                     SEO Services
                   </a>
+
+                  {/* {selectOption && (
+                    <p className="mt-4 text-green-700">
+                      You selected: <strong>{selectOption}</strong>
+                    </p>
+                  )} */}
                 </div>
               </div>
             </div>
           </div>
           <div className="flex justify-center items-center gap-[12px] mr-2.5  ">
-            <button 
-             className="font-[DM Sans] text-[16px] cursor-pointer rounded-lg text-[#FDFDFD] font-medium py-[10px] px-[16px]  border-1 border-white lg:hidden ">
+            <button className="font-[DM Sans] text-[16px] cursor-pointer rounded-lg text-[#FDFDFD] font-medium py-[10px] px-[16px]  border-1 border-white lg:hidden ">
               Hire an Artisan
-             
             </button>
 
             <button className="hidden md:hidden lg:block font-[DM Sans] cursor-pointer text-[16px] rounded-lg text-[#FDFDFD] font-medium py-[14px] px-[32px]  border-1 border-white">
               Hire an Artisan
             </button>
-            <IoMenuOutline  onClick={Toggle} className="text-white text-2xl  sm:block md:block lg:hidden" />
+            <IoMenuOutline
+              onClick={Toggle}
+              className="text-white text-2xl  sm:block md:block lg:hidden"
+            />
 
-             {/* Conditional rendering */}
-           {menuOpen && (
-            <div onClick={Toggle} className="bg-black text-white w-full h-[250px] absolute top-20 left-0  flex justify-center items-center z-40">
-             <h3>Great</h3>
-            </div>
-             )}
-
+            {/* Conditional rendering */}
+            {menuOpen && (
+              <div
+                onClick={Toggle}
+                className="bg-black text-white w-[80%] h-[250px] absolute top-20 left-0  flex justify-center items-center z-40"
+              >
+                <h3>Great</h3>
+              </div>
+            )}
 
             <button className="hidden md:hidden lg:block font-[DM Sans] cursor-pointer bg-[#CC5500] text-[16px] rounded-lg text-[#FDFDFD] font-medium py-[14px] px-[32px]">
               Become an Artisan
