@@ -25,7 +25,7 @@ import { User } from "lucide-react";
 const Dashboard = () => {
   return (
     <div className="flex min-h-screen">
-      <AdminSideBar />
+    
 
       {/* Main Content Wrapper */}
       <div className="flex-1 p-6">
