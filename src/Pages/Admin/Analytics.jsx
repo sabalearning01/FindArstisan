@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import AdminSearch from '../../Components/AdminSearch';
 
 const Analytics = () => {
   const navigate = useNavigate();
@@ -10,6 +11,7 @@ const Analytics = () => {
 
   return (
     <div>
+      <AdminSearch/>
       <h1>Analytics</h1>
     </div>
   )

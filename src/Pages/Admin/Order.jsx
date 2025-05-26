@@ -1,5 +1,6 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom'
+import AdminSearch from '../../Components/AdminSearch';
 
 const Order = () => {
   const navigate = useNavigate();
@@ -10,6 +11,7 @@ const Order = () => {
 
   return (
     <div>
+      <AdminSearch/>
       <h1>Order</h1>
     </div>
   )

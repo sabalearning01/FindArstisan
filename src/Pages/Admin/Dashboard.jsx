@@ -1,26 +1,8 @@
-// import React from 'react'
-// import AdminSideBar from '../../Components/AdminSideBar'
-// import { CiSearch } from "react-icons/ci";
-// import {User} from "lucide-react";
-
-// const Dashboard = () => {
-//   return (
-//     <div className='flex min-h-screen'>
-
-//        <AdminSideBar/>
-//       <input type="text" placeholder='Search' className='relative w-[568px] h-[55px] ml-[44px] p-9 text-2xl mt-[10px]'/>
-//        <CiSearch className='absolute  top-[39px] right-[845px] text-black'/>
-
-//     </div>
-//   )
-// }
-
-// export default Dashboard
-
 import React from "react";
 import AdminSideBar from "../../Components/AdminSideBar";
 import { CiSearch } from "react-icons/ci";
 import { User } from "lucide-react";
+import AdminSearch from "../../Components/AdminSearch";
 
 const Dashboard = () => {
   return (
@@ -28,16 +10,9 @@ const Dashboard = () => {
     
 
       {/* Main Content Wrapper */}
-      <div className="flex-1 p-6">
-        {/* Search Input with Icon */}
-        <div className="relative w-[568px] h-[55px]">
-          <input
-            type="text"
-            placeholder="Search"
-            className="w-full h-full pl-12 pr-4 text-xl border border-gray-300 rounded-md"
-          />
-          <CiSearch className="absolute top-1/2 left-4 transform -translate-y-1/2 text-2xl text-gray-600" />
-        </div>
+      <div className="flex-1 ">
+       
+         <AdminSearch/>
 
         {/* More dashboard content goes here */}
 
