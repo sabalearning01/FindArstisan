@@ -1,5 +1,3 @@
-
-
 // import React, { useState } from "react";
 // import { BsEye, BsEyeSlash } from "react-icons/bs";
 // import { FcGoogle } from "react-icons/fc";
@@ -196,7 +194,7 @@
 //         >
 //           Login
 //         </button>
-// {/* 
+// {/*
 //         <button
 //           onClick={handleSubmit}
 //           type="submit"
@@ -240,7 +238,6 @@
 
 // export default Tab2;
 
-
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
@@ -250,7 +247,9 @@ import GoogleAuth from "./GoogleAuth";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Email is required"),
-  password: Yup.string().min(6, "Minimum 6 characters").required("Password is required"),
+  password: Yup.string()
+    .min(6, "Minimum 6 characters")
+    .required("Password is required"),
 });
 
 const Tab2 = () => {
@@ -286,13 +285,16 @@ const Tab2 = () => {
       await validationSchema.validate(formData, { abortEarly: false });
       setErrors({});
 
-      const response = await fetch("https://artisan-dic2.onrender.com/auth/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://artisan-dic2.onrender.com/auth/login",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const data = await response.json();
 
@@ -362,7 +364,9 @@ const Tab2 = () => {
           placeholder="Email"
           className="w-full h-[70px] rounded-lg px-4 py-4 bg-[#E6E6E6] text-[#36454F] outline-0"
         />
-        {errors.email && <p className="text-red-500 text-sm mt-1 ml-2">{errors.email}</p>}
+        {errors.email && (
+          <p className="text-red-500 text-sm mt-1 ml-2">{errors.email}</p>
+        )}
 
         <div className="relative mt-[28px]">
           <input
@@ -380,7 +384,9 @@ const Tab2 = () => {
             {showPassword ? <BsEyeSlash size={20} /> : <BsEye size={20} />}
           </span>
         </div>
-        {errors.password && <p className="text-red-500 text-sm mt-1 ml-2">{errors.password}</p>}
+        {errors.password && (
+          <p className="text-red-500 text-sm mt-1 ml-2">{errors.password}</p>
+        )}
 
         <button
           type="submit"
@@ -407,13 +413,16 @@ const Tab2 = () => {
           <GoogleAuth />
         </button>
 
+      
+
         {/* Footer */}
         <p className="text-center text-[18px] text-[#36454F] mt-[28px]">
           Don’t have an account?{" "}
-          <span className="text-[#CC5500] font-semibold cursor-pointer">Create Account!</span>
+          <span className="text-[#CC5500] font-semibold cursor-pointer">
+            Create Account!
+          </span>
         </p>
       </form>
-    
     </div>
   );
 };

@@ -1,7 +1,7 @@
 
 import { Route, Routes } from "react-router";
 import "./App.css";
-
+import SignUp from "./Pages/Auth/SignUp";
 import Login from "./Pages/Auth/Login";
 import Homepage from "./Pages/Homepage";
 import RootLayout from "./layout/RootLayout";
@@ -18,6 +18,7 @@ import Customers from "./Pages/Admin/Customers";
 import Transactions from "./Pages/Admin/Transactions";
 import Logout from "./Pages/Auth/Logout";
 import AdminSideBar from "./Components/AdminSideBar";
+import ControlPanel from "./Pages/Auth/ControlPanel";
 
 function App() {
   return (
@@ -27,11 +28,14 @@ function App() {
         <Route element={<RootLayout />}>
           <Route index element={<Homepage />} />
           <Route path="login" element={<Login />} />
+          <Route path="signup" element={<SignUp />} />
+          <Route path="control panel" element={<ControlPanel/>}/>
         </Route>
 
         {/* Admin Dashboard Routes */}
         <Route path="/dashboard" element={<AdminLayout />}>
           <Route index element={<Dashboard />} />
+          
           <Route path="analytics" element={<Analytics />} />
           <Route path="settings" element={<Settings />} />
           <Route path="artisans" element={<Artisans />} />
