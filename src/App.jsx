@@ -89,6 +89,7 @@ import Logout from "./Pages/Auth/Logout";
 import AdminSideBar from "./Components/AdminSideBar";
 import ControlPanel from "./Pages/Auth/ControlPanel";
 import AdminSignUp from "./Pages/Auth/AdminSignUp";
+import UserProfile from "./Pages/UserProfile";
 
 function App() {
   return (
@@ -107,6 +108,7 @@ function App() {
            <Route path="control-panel" element={<ControlPanel />} />
           <Route path="form" element={<Form />} />
           <Route path="multistepregistration" element={<MultiStepRegistration />} />
+          <Route path="userprofile" element={<UserProfile />} />
         </Route>
 
         {/* Admin Dashboard Routes */}
