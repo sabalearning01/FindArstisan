@@ -242,7 +242,8 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import * as Yup from "yup";
-import toast from "react-hot-toast";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 import GoogleAuth from "./GoogleAuth";
 
 const validationSchema = Yup.object().shape({
@@ -300,7 +301,7 @@ const Tab2 = () => {
 
       if (response.ok) {
         localStorage.setItem("token", data.token);
-        toast.success("Login successful!");
+        toast.success("Login successfully!");
 
         setTimeout(() => {
           navigate("/dashboard"); // Replace with your actual route
@@ -328,6 +329,7 @@ const Tab2 = () => {
 
   return (
     <div className="w-[90%] mx-5 mt-7 md:w-[94%]">
+      <ToastContainer />
       {/* Header */}
       <div className="hidden lg:block mt-[74px]">
         <h2 className="font-[DM Sans] text-[32px] font-bold text-[#36454F] ml-[20px]">
@@ -419,7 +421,8 @@ const Tab2 = () => {
         <p className="text-center text-[18px] text-[#36454F] mt-[28px]">
           Don’t have an account?{" "}
           <span className="text-[#CC5500] font-semibold cursor-pointer">
-            Create Account!
+            <a href="/signup">Create Account!</a>
+            
           </span>
         </p>
       </form>

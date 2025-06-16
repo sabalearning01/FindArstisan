@@ -1,19 +1,18 @@
 // import React,{useState} from "react";
 
 // import Success from "../assets/success.png";
+// import { useNavigate } from "react-router-dom";
+
+// const Modal = ({ onClose, message, redirectText, redirectTo }) => {
+//   const navigate = useNavigate();
 
 
 
-// const handleClose = () => {
-//   setOpen(false);
-// };
+//   const handleRedirect = () => {
+//     onClose(); // optionally close the modal
+//     navigate(redirectTo);
+//   };
 
-// const handleOpen = () => {
-//   setOpen(true);
-// };
-
-// const Modal = () => {
-//     const [open, setOpen] = useState(false);
 //   return (
 //     <div className="m-auto mt-[80px] w-[90%] h-[200px] lg:w-[780px] lg:h-[400px] bg-white shadow-lg rounded-lg p-6">
 //       <img src={Success} alt="Success" className="lg:mt-[100px]  mx-auto mb-4" />
@@ -65,13 +64,14 @@
 
 
 // src/Components/Modal.js
+
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const Modal = ({ open, onClose, message, redirectText, redirectTo }) => {
+const Modal = ({ onClose, message, redirectText, redirectTo }) => {
   const navigate = useNavigate();
 
-  if (!open) return null;
+  // if (!open) return null;
 
   const handleRedirect = () => {
     onClose(); // optionally close the modal
@@ -102,5 +102,4 @@ const Modal = ({ open, onClose, message, redirectText, redirectTo }) => {
 };
 
 export default Modal;
-
 

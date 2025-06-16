@@ -139,10 +139,7 @@ const UserProfile = () => {
           </div>
         </div>
 
-        {/* <div>
-           <img className="w-[400px] h-[200px]" src={cert} alt="" />
-           <div className="w-[398px] h-[20px] bg-[#B0D8D8]"><p className="text-center">Certifications & Recognitions</p></div>
-         </div> */}
+        
       </div>
     </div>
   );
