@@ -446,7 +446,7 @@ const MultiStepRegistration = () => {
 
   return (
     <>
-      <Modal open={showModal} onClose={() => setShowModal(false)} />
+      {/* <Modal open={showModal} onClose={() => setShowModal(false)} /> */}
       <form onSubmit={formik.handleSubmit} className="flex h-screen">
         {/* Sidebar */}
         <div className="w-1/3 bg-teal-700 text-[#36454F] p-6">

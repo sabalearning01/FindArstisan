@@ -3,16 +3,25 @@ import * as yup from "yup";
 import { Eye, EyeOff } from "lucide-react";
 import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import SignUpLady from "../../assets/SignUpLady.png";
 import Modal from "../../Components/Modal";
 
 const validationSchema = yup.object().shape({
   firstname: yup.string().required("First name is required"),
   lastname: yup.string().required("Last name is required"),
-  email: yup.string().email("Invalid email format").required("Email is required"),
-  password: yup.string().min(6, "Password must be at least 6 characters").required("Password is required"),
-  confirmPassword: yup.string().oneOf([yup.ref("password"), null], "Passwords must match").required("Confirm Password is required"),
+  email: yup
+    .string()
+    .email("Invalid email format")
+    .required("Email is required"),
+  password: yup
+    .string()
+    .min(6, "Password must be at least 6 characters")
+    .required("Password is required"),
+  confirmPassword: yup
+    .string()
+    .oneOf([yup.ref("password"), null], "Passwords must match")
+    .required("Confirm Password is required"),
 });
 
 const SignUp = () => {
@@ -28,11 +37,11 @@ const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [showModal, setShowModal] = useState(true)
+  const [showModal, setShowModal] = useState(false);
 
   const closeModal = () => {
-    setShowModal(false)
-  }
+    setShowModal(true);
+  };
   const handleTabClick = (tab) => {
     setActiveTab(tab);
     setFormData({
@@ -62,20 +71,28 @@ const SignUp = () => {
         lastname: formData.lastname,
         email: formData.email,
         password: formData.password,
+        confirmPassword:formData.confirmPassword
       };
 
       if (activeTab === "artisan") {
-        await axios.post("https://artisan-dic2.onrender.com/artisan/register-artisan", payload)
-        .then(res => {
-          console.log(res)
-          toast.success("Artisan registered successfully!");
-          setShowModal(true)
-        })
-        .catch(err => {
-          console.log(err)
-        })
+        await axios
+          .post(
+            "https://artisan-dic2.onrender.com/artisan/register-artisan",
+            payload
+          )
+          .then((res) => {
+            console.log(res);
+            toast.success("Artisan registered successfully!");
+            setShowModal(true);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
       } else if (activeTab === "user") {
-        await axios.post("https://artisan-dic2.onrender.com/auth/register", payload);
+        await axios.post(
+          "https://artisan-dic2.onrender.com/auth/register",
+          payload
+        );
         toast.success("User registered successfully!");
       }
 
@@ -84,7 +101,9 @@ const SignUp = () => {
       setLoading(false);
       if (err.response) {
         console.log("Server error response:", err.response.data);
-        toast.error(`Error: ${err.response.data.message || "Something went wrong!"}`);
+        toast.error(
+          `Error: ${err.response.data.message || "Something went wrong!"}`
+        );
       } else if (err.inner) {
         const formattedErrors = err.inner.reduce((acc, curr) => {
           acc[curr.path] = curr.message;
@@ -101,12 +120,17 @@ const SignUp = () => {
     <div className="flex flex-col lg:flex-row min-h-screen">
       <ToastContainer />
       <div className="hidden lg:flex lg:w-1/2 items-center justify-center">
-        <img src={SignUpLady} alt="Sign Up" className="object-cover h-full w-full" />
+        <img
+          src={SignUpLady}
+          alt="Sign Up"
+          className="object-cover h-full w-full"
+        />
       </div>
 
       <div className="flex-1 px-6 sm:px-10 lg:px-20 py-10 flex flex-col justify-center">
         <h2 className="text-2xl sm:text-3xl font-bold mb-6">
-          Sign Up Now to <span className="text-[#008080]">Hire Skilled Artisans</span>
+          Sign Up Now to{" "}
+          <span className="text-[#008080]">Hire Skilled Artisans</span>
         </h2>
 
         <div className="bg-[#F5F5DC] rounded-xl">
@@ -137,7 +161,9 @@ const SignUp = () => {
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-md p-3"
             />
-            {errors.firstname && <p className="text-red-500 text-sm">{errors.firstname}</p>}
+            {errors.firstname && (
+              <p className="text-red-500 text-sm">{errors.firstname}</p>
+            )}
 
             <input
               type="text"
@@ -147,7 +173,9 @@ const SignUp = () => {
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-md p-3"
             />
-            {errors.lastname && <p className="text-red-500 text-sm">{errors.lastname}</p>}
+            {errors.lastname && (
+              <p className="text-red-500 text-sm">{errors.lastname}</p>
+            )}
 
             <input
               type="email"
@@ -157,7 +185,9 @@ const SignUp = () => {
               onChange={handleChange}
               className="w-full border border-gray-300 rounded-md p-3"
             />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email}</p>}
+            {errors.email && (
+              <p className="text-red-500 text-sm">{errors.email}</p>
+            )}
 
             <div className="relative">
               <input
@@ -174,7 +204,9 @@ const SignUp = () => {
               >
                 {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
               </span>
-              {errors.password && <p className="text-red-500 text-sm">{errors.password}</p>}
+              {errors.password && (
+                <p className="text-red-500 text-sm">{errors.password}</p>
+              )}
             </div>
 
             <div className="relative">
@@ -203,7 +235,11 @@ const SignUp = () => {
             className="mt-6 w-full bg-[#003636] text-white py-3 rounded-md hover:bg-[#002b2b] transition-colors"
             disabled={loading}
           >
-            {loading ? "Submitting..." : `Sign Up as ${activeTab.charAt(0).toUpperCase() + activeTab.slice(1)}`}
+            {loading
+              ? "Submitting..."
+              : `Sign Up as ${
+                  activeTab.charAt(0).toUpperCase() + activeTab.slice(1)
+                }`}
           </button>
 
           <div className="flex items-center gap-2 mt-6 text-gray-500 text-sm">
@@ -234,14 +270,9 @@ const SignUp = () => {
           </p>
         </form>
       </div>
-      {showModal && <Modal onClose={closeModal}/>}
+      {showModal && <Modal onClose={closeModal} redirectTo={"/multistepregistration"} />}
     </div>
   );
 };
 
 export default SignUp;
-
-
-
-
-

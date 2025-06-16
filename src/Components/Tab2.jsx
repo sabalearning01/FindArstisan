@@ -243,7 +243,7 @@ import { useNavigate } from "react-router-dom";
 import { BsEye, BsEyeSlash } from "react-icons/bs";
 import * as Yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
+import "react-toastify/dist/ReactToastify.css";
 import GoogleAuth from "./GoogleAuth";
 
 const validationSchema = Yup.object().shape({
@@ -415,14 +415,11 @@ const Tab2 = () => {
           <GoogleAuth />
         </button>
 
-      
-
         {/* Footer */}
         <p className="text-center text-[18px] text-[#36454F] mt-[28px]">
           Don’t have an account?{" "}
           <span className="text-[#CC5500] font-semibold cursor-pointer">
             <a href="/signup">Create Account!</a>
-            
           </span>
         </p>
       </form>
