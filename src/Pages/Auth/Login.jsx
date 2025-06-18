@@ -541,9 +541,9 @@ import Footer from '../../Components/Footer'
 const Login = () => {
   return (
     <div>
-      <Header/>
+      {/* <Header/> */}
       <AuthInput/>
-      <Footer/>
+      {/* <Footer/> */}
     
     </div>
   )
