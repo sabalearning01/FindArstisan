@@ -408,12 +408,20 @@ const Tab2 = () => {
         </div>
 
         {/* GoogleAuth */}
-        <button
+        {/* <button
           type="button"
           className="flex justify-center items-center gap-[10px] h-[56px] w-full border border-[#5E6A72] bg-white px-4 py-4 mt-6 rounded-lg text-[18px] text-[#36454F]"
         >
           <GoogleAuth />
-        </button>
+        </button> */}
+        {/* <div  className="flex justify-center items-center gap-[10px] h-[56px] w-full border border-[#5E6A72] bg-white px-4 py-4 mt-6 rounded-lg text-[18px] text-[#36454F]">
+         <GoogleAuth />
+         </div> */}
+
+        {/* GoogleAuth */}
+        <div className="mt-6">
+          <GoogleAuth />
+        </div>
 
         {/* Footer */}
         <p className="text-center text-[18px] text-[#36454F] mt-[28px]">
