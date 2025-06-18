@@ -1,11 +1,17 @@
 import React from 'react'
 import AdminSearch from '../../Components/AdminSearch'
+import AdminSelection from '../../Components/AdminSelection'
+import TableData from '../../Components/TableData';
+import CustomerTableData from '../../Components/CustomerTableData';
 
 const Customers = () => {
   return (
     <div>
       <AdminSearch/>
-      <h1>Customers</h1>
+      <AdminSelection/>
+      {/* <TableData/> */}
+      <CustomerTableData/>
+      
 
     </div>
   )

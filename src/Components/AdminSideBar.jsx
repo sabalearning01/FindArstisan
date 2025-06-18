@@ -30,7 +30,7 @@ const AdminSideBar = () => {
   ];
 
   return (
-    <div className="bg-[#003030] w-[346px] h-full">
+    <div className="bg-[#003030] w-[346px] h-100%">
       <div className="font-[Montserrat] text-white text-[20px] font-bold p-4">
         Admin Dashboard
       </div>
@@ -38,7 +38,7 @@ const AdminSideBar = () => {
         {menuItems.map((item, index) => (
           <li
             key={index}
-            className="flex items-center gap-3 p-4 hover:bg-[#CC5600E3] cursor-pointer"
+            className="flex items-center gap-3 p-7 hover:bg-[#CC5600E3] cursor-pointer"
             onClick={() => navigate(item.path)}
           >
             {item.icon}

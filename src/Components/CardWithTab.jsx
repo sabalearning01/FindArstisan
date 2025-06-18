@@ -123,9 +123,9 @@
 // export default CardWithTab;
 
 import React, { useState } from 'react';
-// import Users from '../Components/Users';
+import Users from '../Components/Users';
 import Artisan from '../Components/Artisan';
-import { Users } from 'lucide-react';
+// import { Users } from 'lucide-react';
 
 const CardWithTab = () => {
   const [activeTab, setActiveTab] = useState("artisan"); // ✅ Use lowercase
