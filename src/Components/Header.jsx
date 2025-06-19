@@ -69,14 +69,14 @@ const Header = () => {
           {/* Right Section */}
           <div className="flex justify-center items-center gap-[12px]">
             {/* Mobile: Hire an Artisan */}
-            <Link to="/login">
+            <Link to="/signup">
               <button className="font-[DM Sans] text-[16px] cursor-pointer rounded-lg text-[#FDFDFD] font-medium py-[10px] px-[16px] border-1 border-white lg:hidden">
                 Hire an Artisan
               </button>
             </Link>
 
             {/* Desktop: Hire an Artisan */}
-            <Link to="/signup">
+            <Link to="/login">
               <button className="hidden lg:block font-[DM Sans] cursor-pointer text-[16px] rounded-lg text-[#FDFDFD] font-medium py-[14px] px-[32px] border-1 border-white">
                 Hire an Artisan
               </button>
