@@ -171,7 +171,7 @@ const Header = () => {
           <div className="flex justify-center items-center gap-[12px]">
             {/* Mobile: Hire an Artisan */}
             <Link to="/login">
-              <button className="font-[DM Sans] text-[16px] cursor-pointer rounded-lg text-[#FDFDFD] font-medium py-[10px] px-[16px] border-1 border-white lg:hidden">
+              <button className="font-[DM Sans] text-[16px] cursor-pointer rounded-lg text-[#FDFDFD] font-medium py-[10px] px-[16px]  border-1 border-white lg:hidden">
                 Hire an Artisan
               </button>
             </Link>
