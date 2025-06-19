@@ -140,8 +140,7 @@
 // export default App;
 
 
-
-import { Route, Routes } from "react-router";
+import { Route, Routes } from "react-router-dom"; // ✅ make sure it's from react-router-dom
 import "./App.css";
 import MultiStepRegistration from "./Pages/Auth/MultiStepRegistration";
 import Form from "./Pages/Auth/Form";
@@ -166,7 +165,7 @@ import AdminSignUp from "./Pages/Auth/AdminSignUp";
 import ControlPanel from "./Pages/Auth/ControlPanel";
 import UserProfile from "./Pages/UserProfile";
 
-import ProtectedRoute from "./Components/ProtectedRoute"; // ✅ import protected route
+import ProtectedRoute from "./Components/ProtectedRoute"; // ✅
 
 function App() {
   return (
@@ -189,7 +188,7 @@ function App() {
 
         {/* ✅ Protected Admin Routes */}
         <Route
-          path="/dashboard"
+          path="/dashboard/*"
           element={
             <ProtectedRoute>
               <AdminLayout />
@@ -213,3 +212,4 @@ function App() {
 }
 
 export default App;
+
