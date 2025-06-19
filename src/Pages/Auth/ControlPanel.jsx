@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FiEye, FiEyeOff } from "react-icons/fi";
-import Adminpicture from "../../Assets/Adminpicture.png"; // Assuming you have an image for the admin panel
-import hamsearch from "../../Assets/hamsearch.png"; // Assuming you have a search icon
+import Adminpicture from '../../assets/Adminpicture.png'
+import hamsearch from "../../assets/hamsearch.png"; // Assuming you have a search icon
 
 const ControlPanel = () => {
   const [showPassword, setShowPassword] = useState(false);
