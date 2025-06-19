@@ -1,34 +1,211 @@
-import { useState } from "react";
-import { Route, Routes } from "react-router";
+// import { Route, Routes } from "react-router";
+// import "./App.css";
+// import MultiStepRegistration from "./Pages/Auth/MultiStepRegistration";
+// import Form from "./Pages/Auth/Form";
+// import SignUp from "./Pages/Auth/SignUp";
+// import Login from "./Pages/Auth/Login";
+// import Homepage from "./Pages/Homepage";
+// import RootLayout from "./layout/RootLayout";
+// import Modal from "./Components/Modal";
+
+// import AdminLayout from "./layout/AdminLayout";
+// import Feedback from "./Pages/Admin/Feedback";
+// import Order from "./Pages/Admin/Order";
+// import Settings from "./Pages/Admin/Settings";
+// import Dashboard from "./Pages/Admin/Dashboard";
+// import Analytics from "./Pages/Admin/Analytics";
+// import Artisans from "./Pages/Admin/Artisans";
+// import Services from "./Pages/Admin/Services";
+// import Customers from "./Pages/Admin/Customers";
+// import Transactions from "./Pages/Admin/Transactions";
+// import Logout from "./Pages/Auth/Logout";
+// import AdminSideBar from "./Components/AdminSideBar";
+// import ControlPanel from "./Pages/Auth/ControlPanel";
+// import AdminSignUp from "./Pages/Auth/AdminSignUp";
+// import UserProfile from "./Pages/UserProfile";
+
+// function App() {
+//   return (
+//     <div className="app-container">
+//       <Routes>
+//         {/* Standalone Pages (No Header/Footer) */}
+//         {/* <Route path="control-panel" element={<ControlPanel />} /> */}
+//         <Route path="adminsignup" element={<AdminSignUp />} />
+//         <Route path="modal" element={<Modal />} />
+
+//         {/* Public Routes (With Header/Footer via RootLayout) */}
+//         <Route element={<RootLayout />}>
+//           <Route index element={<Homepage />} />
+//           <Route path="login" element={<Login />} />
+//           <Route path="signup" element={<SignUp />} />
+//            <Route path="control-panel" element={<ControlPanel />} />
+//           <Route path="form" element={<Form />} />
+//           <Route path="multistepregistration" element={<MultiStepRegistration />} />
+//           <Route path="userprofile" element={<UserProfile />} />
+//         </Route>
+
+//         {/* Admin Dashboard Routes */}
+//         <Route path="/dashboard" element={<AdminLayout />}>
+//           <Route index element={<Dashboard />} />
+//           <Route path="analytics" element={<Analytics />} />
+//           <Route path="settings" element={<Settings />} />
+//           <Route path="artisans" element={<Artisans />} />
+//           <Route path="logout" element={<Logout />} />
+//           <Route path="feedback" element={<Feedback />} />
+//           <Route path="order" element={<Order />} />
+//           <Route path="services" element={<Services />} />
+//           <Route path="customers" element={<Customers />} />
+//           <Route path="transactions" element={<Transactions />} />
+//         </Route>
+//       </Routes>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+// import { Route, Routes } from "react-router";
+// import "./App.css";
+// import MultiStepRegistration from "./Pages/Auth/MultiStepRegistration";
+// import Form from "./Pages/Auth/Form";
+// import SignUp from "./Pages/Auth/SignUp";
+// import Login from "./Pages/Auth/Login";
+// import Homepage from "./Pages/Homepage";
+// import RootLayout from "./layout/RootLayout";
+// import Modal from "./Components/Modal";
+
+// import AdminLayout from "./layout/AdminLayout";
+// import Feedback from "./Pages/Admin/Feedback";
+// import Order from "./Pages/Admin/Order";
+// import Settings from "./Pages/Admin/Settings";
+// import Dashboard from "./Pages/Admin/Dashboard";
+// import Analytics from "./Pages/Admin/Analytics";
+// import Artisans from "./Pages/Admin/Artisans";
+// import Services from "./Pages/Admin/Services";
+// import Customers from "./Pages/Admin/Customers";
+// import Transactions from "./Pages/Admin/Transactions";
+// import Logout from "./Pages/Auth/Logout";
+// import AdminSignUp from "./Pages/Auth/AdminSignUp";
+// import ControlPanel from "./Pages/Auth/ControlPanel";
+// import UserProfile from "./Pages/UserProfile";
+
+// import ProtectedRoute from "./Components/ProtectedRoute"; // ✅ Import
+
+// function App() {
+//   return (
+//     <div className="app-container">
+//       <Routes>
+//         {/* Standalone Pages (No Header/Footer) */}
+//         <Route path="adminsignup" element={<AdminSignUp />} />
+//         <Route path="modal" element={<Modal />} />
+
+//         {/* Public Routes (With Header/Footer via RootLayout) */}
+//         <Route element={<RootLayout />}>
+//           <Route index element={<Homepage />} />
+//           <Route path="login" element={<Login />} />
+//           <Route path="signup" element={<SignUp />} />
+//           <Route path="control-panel" element={<ControlPanel />} />
+//           <Route path="form" element={<Form />} />
+//           <Route path="multistepregistration" element={<MultiStepRegistration />} />
+//           <Route path="userprofile" element={<UserProfile />} />
+//         </Route>
+
+//         {/* ✅ Protected Admin Dashboard Routes */}
+//         <Route
+//           path="/dashboard"
+//           element={
+//             <ProtectedRoute>
+//               <AdminLayout />
+//             </ProtectedRoute>
+//           }
+//         >
+//           <Route index element={<Dashboard />} />
+//           <Route path="analytics" element={<Analytics />} />
+//           <Route path="settings" element={<Settings />} />
+//           <Route path="artisans" element={<Artisans />} />
+//           <Route path="logout" element={<Logout />} />
+//           <Route path="feedback" element={<Feedback />} />
+//           <Route path="order" element={<Order />} />
+//           <Route path="services" element={<Services />} />
+//           <Route path="customers" element={<Customers />} />
+//           <Route path="transactions" element={<Transactions />} />
+//         </Route>
+//       </Routes>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+import { Route, Routes } from "react-router-dom"; // ✅ make sure it's from react-router-dom
 import "./App.css";
+import MultiStepRegistration from "./Pages/Auth/MultiStepRegistration";
+import Form from "./Pages/Auth/Form";
+import SignUp from "./Pages/Auth/SignUp";
 import Login from "./Pages/Auth/Login";
 import Homepage from "./Pages/Homepage";
-import Carousel from "./Components/Carousel";
 import RootLayout from "./layout/RootLayout";
-// import Layout from "./layouts/FramerLayout";
-// import AlteHome from "./Components/AlteHome";
+import Modal from "./Components/Modal";
+
+import AdminLayout from "./layout/AdminLayout";
+import Feedback from "./Pages/Admin/Feedback";
+import Order from "./Pages/Admin/Order";
+import Settings from "./Pages/Admin/Settings";
+import Dashboard from "./Pages/Admin/Dashboard";
+import Analytics from "./Pages/Admin/Analytics";
+import Artisans from "./Pages/Admin/Artisans";
+import Services from "./Pages/Admin/Services";
+import Customers from "./Pages/Admin/Customers";
+import Transactions from "./Pages/Admin/Transactions";
+import Logout from "./Pages/Auth/Logout";
+import AdminSignUp from "./Pages/Auth/AdminSignUp";
+import ControlPanel from "./Pages/Auth/ControlPanel";
+import UserProfile from "./Pages/UserProfile";
+
+import ProtectedRoute from "./Components/ProtectedRoute"; // ✅
 
 function App() {
   return (
-    // <div>
-    //   {/* <Login /> */}
-    //   {/* <Homepage/> */}
-    //   {/* <Carousel/> */}
-    //   {/* <AlteHome/> */}
-    // </div>
     <div className="app-container">
       <Routes>
-        {/* Routes with Header and Footer */}
+        {/* Standalone Pages */}
+        <Route path="adminsignup" element={<AdminSignUp />} />
+        <Route path="modal" element={<Modal />} />
+
+        {/* Public Pages with Layout */}
         <Route element={<RootLayout />}>
           <Route index element={<Homepage />} />
           <Route path="login" element={<Login />} />
+          <Route path="signup" element={<SignUp />} />
+          <Route path="control-panel" element={<ControlPanel />} />
+          <Route path="form" element={<Form />} />
+          <Route path="multistepregistration" element={<MultiStepRegistration />} />
+          <Route path="userprofile" element={<UserProfile />} />
         </Route>
-        {/* <Route path="verify" element={<Verify />} /> */}
-        {/* <Route path="verified" element={<Verified />} /> */}
-        {/* <Route path="/forgot" element={<ForgotPassword />} /> */}
-        {/* <Route path="/reset-success" element={<ResetNotification />} /> */}
-        {/* <Route path="/set-password" element={<SetPassword />} /> */}
-        {/* <Route path="/agent/:id" element={<AgentDetails />} /> */}
+
+        {/* ✅ Protected Admin Routes */}
+        <Route
+          path="/dashboard/*"
+          element={
+            <ProtectedRoute>
+              <AdminLayout />
+            </ProtectedRoute>
+          }
+        >
+          <Route index element={<Dashboard />} />
+          <Route path="analytics" element={<Analytics />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="artisans" element={<Artisans />} />
+          <Route path="logout" element={<Logout />} />
+          <Route path="feedback" element={<Feedback />} />
+          <Route path="order" element={<Order />} />
+          <Route path="services" element={<Services />} />
+          <Route path="customers" element={<Customers />} />
+          <Route path="transactions" element={<Transactions />} />
+        </Route>
       </Routes>
     </div>
   );
@@ -36,37 +213,3 @@ function App() {
 
 export default App;
 
-// import { Routes, Route } from "react-router-dom";
-// import Homepage from "./Pages/Homepage";
-// import Login from "./Pages/Auth/Login";
-// import ProtectedPage from "./Pages/ProtectedPage";
-// import Carousel from "./Components/Carousel";
-// // import RootLayout from "./layouts/RootLayout";
-// // import ProtectedRoute from "./Components/ProtectedRoute";
-
-// function App() {
-//   return (
-//     <Routes>
-//       {/* Layout with Header & Footer */}
-//       <Route element={<RootLayout />}>
-//         <Route index element={<Homepage />} />
-//         <Route path="/carousel" element={<Carousel />} />
-
-//         {/* Protected Route inside Layout */}
-//         <Route
-//           path="/protected"
-//           element={
-//             <ProtectedRoute>
-//               <ProtectedPage />
-//             </ProtectedRoute>
-//           }
-//         />
-//       </Route>
-
-//       {/* Auth page without layout */}
-//       <Route path="/login" element={<Login />} />
-//     </Routes>
-//   );
-// }
-
-// export default App;

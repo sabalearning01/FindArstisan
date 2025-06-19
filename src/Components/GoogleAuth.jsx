@@ -50,13 +50,22 @@ const GoogleAuth = () => {
             <button onClick={logOut}>Log out</button>
           </div>
         ) : (
+          // <button
+          //   className="flex justify-center items-center gap-[10px]"
+          //   onClick={login}
+          // >
+          //   {" "}
+          //   <FcGoogle /> Google{" "}
+          // </button>
+
           <button
-            className="flex justify-center items-center gap-[10px]"
-            onClick={login}
-          >
-            {" "}
-            <FcGoogle /> Google{" "}
-          </button>
+      type="button"
+      onClick={login}
+      className="flex justify-center items-center gap-3 h-[56px] w-full border border-[#5E6A72] bg-white px-4 py-2 rounded-lg text-[18px] text-[#36454F]"
+    >
+      <FcGoogle size={24} />
+      Continue with Google
+    </button>
         )}
       </div>
     </div>

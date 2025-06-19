@@ -29,10 +29,10 @@ const ArtisanTypeSmall = () => {
     <div className='block lg:hidden'>
       {ArtisansTypeSmall.map((ArtisansTypeSmall,index)=>{
         return(
-            <div key={index} className='flex flex-col items-center justify-center'>
+            <div key={index} className='flex flex-col items-center justify-center px-[20px] py-[20px]'>
                 <img src ={ArtisansTypeSmall.image} alt={ArtisansTypeSmall.image}
                 className='w-[100%] h-[100%] rounded-2xl shadow-lg group'/>
-                <h2 className='text-center text-[16px] font-semibold mt-2'>{ArtisanTypeSmall.name}</h2>
+                <h2 className='text-center text-[16px] font-semibold mt-2'>{ArtisansTypeSmall.name}</h2>
                 
         </div>
       )})}
