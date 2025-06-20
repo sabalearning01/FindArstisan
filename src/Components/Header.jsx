@@ -69,13 +69,8 @@ const Header = () => {
           {/* Right Section */}
           <div className="flex justify-center items-center gap-[12px]">
             {/* Mobile: Hire an Artisan */}
-<<<<<<< HEAD
-            <Link to="/login">
-              <button className="font-[DM Sans] text-[16px] cursor-pointer rounded-lg text-[#FDFDFD] font-medium py-[10px] px-[16px]  border-1 border-white lg:hidden">
-=======
             <Link to="/signup">
               <button className="font-[DM Sans] text-[16px] cursor-pointer rounded-lg text-[#FDFDFD] font-medium py-[10px] px-[16px] border-1 border-white lg:hidden">
->>>>>>> 6eff4f25f392d2e56ffd11843a4ed6b668c3cdd2
                 Hire an Artisan
               </button>
             </Link>
