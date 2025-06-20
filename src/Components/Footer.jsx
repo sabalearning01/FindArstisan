@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import CountryCitySelector from "./CountryCitySelector";
+import CountryCitySelector from "./CountryCitySelector";
 import { LuTextSearch } from "react-icons/lu";
 import ig from "../assets/ig.png";
 import linkedln from "../assets/linkedln.png";
@@ -128,9 +128,9 @@ const Footer = () => {
         </div>
 
         {/* Social and Selector */}
-        {/* <div className="pt-[40px]">
+        <div className="pt-[40px]">
           <CountryCitySelector />
-        </div> */}
+        </div>
         <hr className="w-[100%] bg-[#007474] mt-[60px]" />
         <div className="flex items-center gap-3 text-[#A3A9AE] mt-[60px]">
           <AiOutlineCopyright />
