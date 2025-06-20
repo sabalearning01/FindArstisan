@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CountryCitySelector from "./CountryCitySelector";
+// import CountryCitySelector from "./CountryCitySelector";
+import SelectCountry from "../Components/SelectCountry"; // Adjust the import path as necessary
 import { LuTextSearch } from "react-icons/lu";
 import ig from "../assets/ig.png";
 import linkedln from "../assets/linkedln.png";
@@ -25,8 +26,12 @@ const Footer = () => {
               We exist to help you get secure, fast and reliable artisans at
               affordable rate
             </p>
-            <div className="pt-[38.24px]">
+            {/* <div className="pt-[38.24px]">
               <CountryCitySelector />
+            </div> */}
+
+            <div className="pt-[38.24px]">
+              <SelectCountry/>
             </div>
           </div>
 
@@ -128,9 +133,13 @@ const Footer = () => {
         </div>
 
         {/* Social and Selector */}
-        <div className="pt-[40px]">
+        {/* <div className="pt-[40px]">
           <CountryCitySelector />
-        </div>
+        </div> */}
+
+            <div className="pt-[40px]">
+              <SelectCountry/>
+            </div>
         <hr className="w-[100%] bg-[#007474] mt-[60px]" />
         <div className="flex items-center gap-3 text-[#A3A9AE] mt-[60px]">
           <AiOutlineCopyright />
