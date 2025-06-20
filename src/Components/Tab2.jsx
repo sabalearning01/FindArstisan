@@ -56,14 +56,14 @@ const Tab2 = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          
         },
         body: JSON.stringify(formData),
       });
 
       const data = await response.json();
-
       if (response.ok) {
-        localStorage.setItem("token", data.token);
+        localStorage.setItem("token", data.accessToken);
         localStorage.setItem("role", activeTab); // store user role
         toast.success("Login successfully!");
 
