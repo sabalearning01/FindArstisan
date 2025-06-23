@@ -229,7 +229,7 @@ const SignUp = () => {
               )}
             </div>
           </div>
-
+         
           <button
             type="submit"
             className="mt-6 w-full bg-[#003636] text-white py-3 rounded-md hover:bg-[#002b2b] transition-colors"

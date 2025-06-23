@@ -18,17 +18,6 @@ const AdminLayout = () => {
 export default AdminLayout;
 
 
-// import { Outlet } from "react-router-dom";
 
-// const AdminLayout = () => {
-//   return (
-//     <div className="admin-layout">
-//       {/* Navbar or Sidebar here */}
-//       <Outlet /> {/* This renders the nested route content */}
-//     </div>
-//   );
-// };
-
-// export default AdminLayout;
 
 
