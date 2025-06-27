@@ -275,7 +275,8 @@ const Homepage = () => {
        </div>
 
       <div className="flex lg:flex-row  flex-col-reverse lg:justify-between  items-center  lg:mx-[100px] lg:my-[100px]">
-        <div className="mx-[20px] my-[20px]">
+        <div c
+        lassName="mx-[20px] my-[20px]">
           <h2 className=" font-[DM Sans] font-bold text-[36px] lg:text-[52px]">
             Looking to boost your earnings?
             <span className="text-[#008080]">
@@ -283,10 +284,12 @@ const Homepage = () => {
             </span>{" "}
             <span className="text-[#CC5500]">today!</span>
           </h2>
-
+            
+            <a href="/signup">
           <button className="cursor-pointer mt-[24px] bg-[#CC5500] rounded-lg text-[14px] font-medium px-[48px] py-[18px] gap-1.5 text-[#FDFDFD] flex justify-center items-center">
             Join us today <FaArrowRight />{" "}
           </button>
+            </a>
         </div>
 
         <div className=" w-[100%]  grid grid-cols-3 grid-rows-3 gap-4 max-w-4xl mx-auto p-4">
@@ -354,3 +357,6 @@ const Homepage = () => {
 };
 
 export default Homepage;
+
+
+
