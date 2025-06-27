@@ -19,8 +19,8 @@ const TestimonialCard = ({ text, author }) => (
   </div>
 );
 
-const Card = () => {
-  const baseSettings = {
+const CardSlider1 = () => {
+  const settings = {
     speed: 2000,
     autoplay: true,
     autoplaySpeed: 0,
@@ -38,26 +38,14 @@ const Card = () => {
   };
 
   return (
-    <div className="mt-[70px] bg-teal-900 py-10 space-y-8 overflow-hidden">
-      {/* Top Row - Normal Direction */}
-      <div>
-        <Slider {...baseSettings}>
-          {testimonials.map((t, i) => (
-            <TestimonialCard key={`top-${i}`} {...t} />
-          ))}
-        </Slider>
-      </div>
-
-      {/* Bottom Row - Opposite Direction */}
-      <div>
-        <Slider {...{ ...baseSettings, rtl: true }}>
-          {testimonials.map((t, i) => (
-            <TestimonialCard key={`bottom-${i}`} {...t} />
-          ))}
-        </Slider>
-      </div>
+    <div className="overflow-hidden">
+      <Slider {...settings}>
+        {testimonials.map((t, i) => (
+          <TestimonialCard key={i} {...t} />
+        ))}
+      </Slider>
     </div>
   );
 };
 
-export default Card;
+export default CardSlider1;

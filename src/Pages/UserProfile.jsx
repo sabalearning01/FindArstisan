@@ -2,71 +2,74 @@ import React, { useState } from "react";
 import bg from "../assets/bg.png";
 import profilepic from "../assets/profilepic.png";
 import Vector from "../assets/Vector.png";
-// import { Check, CheckCircle } from "lucide-react";
 import cert from "../assets/cert.png";
+import UserSlider from "../Components/UserSlider";
+import VideoUserSlider from "../Components/VideoUserSlider";
+import CardSlider1 from "../Components/CardSlider1";
 
 const UserProfile = () => {
   const tabs = [
-    { label: "Profile", content: "This is the Profile tab content." },
-    { label: "Projects Gallery", content: "Projects Gallery goes here." },
-    { label: "Reviews(8)", content: "Here are 8 user reviews." },
-    { label: "Chats", content: "Chat history or messages would appear here." },
+    { label: "Profile" },
+    { label: "Projects Gallery" },
+    { label: "Reviews(8)" },
+    { label: "Chats" },
   ];
 
   const [activeTab, setActiveTab] = useState(tabs[0].label);
 
   return (
     <div>
+      {/* Background Banner */}
       <img
-        className="w-[100%] h-[143px] lg:h-[200px]"
+        className="w-full h-36 md:h-52 object-cover"
         src={bg}
-        alt="Background"
+        alt="Profile Background"
       />
 
-      <div className="flex justify-between items-center">
-        <div className="flex">
+      {/* Profile Top Section */}
+      <div className="relative max-w-6xl mx-auto px-4 mt-[-50px] flex flex-col md:flex-row justify-between items-center">
+        {/* Profile Info */}
+        <div className="flex items-start gap-4">
           <img
-            className="rounded-full absolute left-24 top-36  border-4 object-contain border-[#FDFDFD] border-solid"
+            className="w-[300px] h-[300px] rounded-full border-4 border-white object-cover"
             src={profilepic}
-            alt=""
+            alt="Justina Bryan Profile"
           />
           <div>
-            <div className="flex justify-between  gap-2.5 ml-[500px] ">
-              <h4 className="font-[DM Sans] text-[#36454F] font-medium text-[24px]">
+            <div className="flex items-center gap-2 mt-[115px]">
+              <h4 className="text-xl font-semibold text-[#36454F]">
                 Justina Bryan
               </h4>
-              <img className="object-contain " src={Vector} alt="" />
+              <img className="w-4 h-4" src={Vector} alt="Verified Icon" />
             </div>
-            <p className="ml-[500px]">Plumber</p>
-            <p className="ml-[500px]">Lagos, Nigeria</p>
+            <p className="text-gray-600 text-sm">Plumber</p>
+            <p className="text-gray-600 text-sm">Lagos, Nigeria</p>
           </div>
         </div>
 
-        <div>
-          <div className="flex items-center gap-5 mr-[100px] ">
-            <h4 className="font-[DM Sans] font-bold text-[#36454F] text-[24px]">
-              $15/hr
-            </h4>
-            <h4 className="text-[16px] font-medium text-[#5E6A72]">Online</h4>
+        {/* Pricing & Book Now */}
+        <div className="flex flex-col md:items-end gap-2 mt-4 md:mt-0">
+          <div className="flex items-center gap-4">
+            <h4 className="text-lg font-bold text-[#36454F]">$15/hr</h4>
+            <span className="text-sm text-green-600">Online</span>
           </div>
-          <button className="text-[#FDFDFD] text-[24px] font-[DM Sans] font-bold rounded-lg px-[32px] py-[14px] bg-[#CC5500]">
+          <button className="bg-[#CC5500] text-white text-base font-bold rounded-lg px-6 py-2">
             Book Now
           </button>
         </div>
       </div>
 
       {/* Tabs */}
-      <div className="flex flex-wrap sm:flex-nowrap border-b border-gray-200 mt-[150px] mx-[150px] my-[150px] m-auto gap-[100px]">
+      <div className="border-b border-gray-200 mt-10 max-w-6xl mx-auto px-4 flex flex-wrap gap-4">
         {tabs.map((tab) => (
           <button
             key={tab.label}
             onClick={() => setActiveTab(tab.label)}
-            className={`flex-1 sm:flex-none px-4 py-3 text-sm font-medium text-center transition-all duration-200
-              ${
-                activeTab === tab.label
-                  ? "text-[#8A5C00] bg-white border-b-2 border-[#8A5C00]"
-                  : "text-[#5E6A72] bg-white hover:text-#5E6A72"
-              }`}
+            className={`px-4 py-2 text-sm font-medium transition-all ${
+              activeTab === tab.label
+                ? "text-[#8A5C00] border-b-2 border-[#8A5C00]"
+                : "text-gray-600 hover:text-gray-800"
+            }`}
           >
             {tab.label}
           </button>
@@ -74,72 +77,142 @@ const UserProfile = () => {
       </div>
 
       {/* Tab Content */}
-      <div className="bg-white text-gray-800 ml-[100px] mr-[100px] p-4 sm:p-6 mt-2 rounded-md shadow-sm">
-        {tabs.map((tab) =>
-          tab.label === activeTab ? (
-            <div key={tab.label} className="text-base">
-              {tab.content}
+      <div className="bg-white text-gray-800 max-w-6xl mx-auto px-4 py-6 mt-4 rounded-md shadow-sm">
+        {/* Profile Tab Content */}
+        {activeTab === "Profile" && (
+          <>
+            {/* About Me & Business Info */}
+            <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8">
+              {/* About Me */}
+              <div>
+                <h5 className="text-lg font-medium text-[#1E262B] mb-2">
+                  About Me
+                </h5>
+                <div className="bg-[#E6F2F2] p-4 rounded">
+                  <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Corporis delectus veniam ipsam. Labore laudantium aliquam
+                    alias nisi minima quis animi, placeat assumenda aliquid
+                    laborum harum facilis cumque quibusdam dolores eum.
+                  </p>
+                </div>
+              </div>
+
+              {/* Business Name & Availability */}
+              <div className="space-y-4">
+                <div>
+                  <h5 className="text-lg font-medium text-[#1E262B] mb-1">
+                    Business Name
+                  </h5>
+                  <div className="bg-[#E6F2F2] p-3 rounded">
+                    <p>God’s Blessings Plumber Works</p>
+                  </div>
+                </div>
+
+                <div>
+                  <h5 className="text-lg font-medium text-[#1E262B] mb-1">
+                    Availability
+                  </h5>
+                  <div className="bg-[#E6F2F2] p-3 rounded">
+                    <p>Full-time</p>
+                  </div>
+                </div>
+              </div>
             </div>
-          ) : null
+
+            {/* Certifications & Recognitions */}
+            <div className="mt-10">
+              <h5 className="text-xl font-medium text-[#1E262B] mb-4">
+                Certifications & Recognitions
+              </h5>
+
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-[#E6F2F2] p-4 rounded">
+                {[1, 2, 3].map((item, index) => (
+                  <div key={index} className="flex flex-col items-center">
+                    <img
+                      className="w-full h-48 object-cover rounded"
+                      src={cert}
+                      alt={`Certificate ${index + 1}`}
+                    />
+                    <div className="w-full bg-[#B0D8D8] py-1 mt-2 text-center text-sm font-medium">
+                      Certifications & Recognitions
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </>
         )}
-      </div>
 
-      <div className="mt-[66px] flex justify-between items-center gap-4 ml-[50px] mr-[50px]">
-        <div>
-          <p className="text-[18px] font-[DM Sans] font-medium text-[#1E262B">
-            About me
-          </p>
-          <div className="w-[580px] h-[168px] bg-[#E6F2F2]">
-            <p className="px-[24px] py-[24px]">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis
-              delectus veniam ipsam. Labore laudantium aliquam alias nisi minima
-              quis animi, placeat assumenda aliquid laborum harum facilis cumque
-              quibusdam dolores eum.
-            </p>
+        {/* Projects Gallery Tab Content */}
+        {activeTab === "Projects Gallery" && (
+          <div>
+            <h3 className="text-[#1E262B]  font-[DM Sans] font-medium text-[20px]">
+              Pictures
+            </h3>
+            <UserSlider />
+            <h3 className="text-[#1E262B] mt-6 font-[DM Sans] font-medium text-[20px]">
+              Videos
+            </h3>
+            <VideoUserSlider />
           </div>
-        </div>
-        <div>
-          <p className="text-[18px] font-[DM Sans] font-medium text-[#1E262B]">
-            Business Name
-          </p>
-          <div className="bg-[#E6F2F2] w-[580px] h-[56px]">
-            <p className="p-3">God’s Blessings Plumber Works</p>
-          </div>
-          <p className="text-[18px] font-[DM Sans] font-medium text-[#1E262B]">
-            Availability
-          </p>
-          <div className="bg-[#E6F2F2] w-[580px] h-[56px]">
-            <p className="p-3 ">Full-time</p>
-          </div>
-        </div>
-      </div>
+        )}
 
-      <h5 className=" ml-[50px] mt-[66px] text-[#1E262B] font-[DM Sans] font-medium text-[20px]">
-        Certifications & Recognitions
-      </h5>
-      <div className="w-[100%] h-[316px] mb-[40px] bg-[#E6F2F2] flex justify-between items-center  gap-2.5">
-        <div className="ml-[50px]">
-          <img className="w-[400px] h-[200px]" src={cert} alt="" />
-          <div className="w-[398px] h-[20px] bg-[#B0D8D8]">
-            <p className="text-center">Certifications & Recognitions</p>
-          </div>
-        </div>
+        {/* Reviews Tab Content */}
 
-        <div>
-          <img className="w-[400px] h-[200px]" src={cert} alt="" />
-          <div className="w-[398px] h-[20px] bg-[#B0D8D8]">
-            <p className="text-center">Certifications & Recognitions</p>
-          </div>
-        </div>
+        {activeTab === "Reviews(8)" && (
+          <div>
+            <h3 className="text-[#1E262B]  font-[DM Sans] font-medium text-[18px] mt-[36px]">
+              What customers are saying about our services...
+            </h3>
 
-        <div className="mr-[50px]">
-          <img className="w-[400px] h-[200px]" src={cert} alt="" />
-          <div className="w-[398px] h-[20px] bg-[#B0D8D8]">
-            <p className="text-center">Certifications & Recognitions</p>
-          </div>
-        </div>
+            <CardSlider1 />
 
-        
+            <h3 className="font-[DM Sans] font-medium text-[#313F48] text-[18px] mt-[36px]">
+              Share your experience with us
+            </h3>
+            <hr className="border-[#C1C5C8]" />
+            <form className="flex justify-between items-center">
+              <div>
+                <label>Name</label>
+                <input
+                  type="text"
+                  placeholder="Steve Job"
+                  className="rounded-sm mt-[10px] ml-4.5 bg-[#E6F2F2] px-[10px] py-[8px] w-[400px] h-[32px]"
+                />
+                <br />
+                <label>Email</label>
+                <input
+                  type="text"
+                  placeholder="Stevejob@gmail.com"
+                  className="rounded-sm mt-[10px] ml-5.5 bg-[#E6F2F2] px-[10px] py-[8px] w-[400px] h-[32px]"
+                />
+                <br />
+
+                <label>Service</label>
+                <input
+                  type="text"
+                  placeholder="Plumbing"
+                  className="rounded-sm mt-[10px] ml-2.5 bg-[#E6F2F2] px-[10px] py-[8px] w-[400px] h-[32px]"
+                />
+                <br />
+                <label>Rate</label>
+              </div>
+              <div>
+                {/* <label className="mb-16" >Review</label> */}
+                <textarea
+                  className="w-[610px] h-[165px] mt-[10px] bg-[#E6F2F2] rounded-2xl pl-2.5 pt-2.5"
+                  placeholder="Type here...|"
+                ></textarea>
+              </div>
+            </form>
+          </div>
+        )}
+
+        {/* Chats Tab Content */}
+        {activeTab === "Chats" && (
+          <p>Chat history or messages would appear here.</p>
+        )}
       </div>
     </div>
   );
