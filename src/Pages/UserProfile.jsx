@@ -6,8 +6,11 @@ import cert from "../assets/cert.png";
 import UserSlider from "../Components/UserSlider";
 import VideoUserSlider from "../Components/VideoUserSlider";
 import CardSlider1 from "../Components/CardSlider1";
+import useOnlineStatus from "../Components/useOnlineStatus";
 
 const UserProfile = () => {
+  const isOnline = useOnlineStatus();
+
   const tabs = [
     { label: "Profile" },
     { label: "Projects Gallery" },
@@ -51,7 +54,11 @@ const UserProfile = () => {
         <div className="flex flex-col md:items-end gap-2 mt-4 md:mt-0">
           <div className="flex items-center gap-4">
             <h4 className="text-lg font-bold text-[#36454F]">$15/hr</h4>
-            <span className="text-sm text-green-600">Online</span>
+            {isOnline && <span className="text-sm text-green-600">Online</span>}
+            {!isOnline && (
+              <span className="text-sm text-red-600">Offline</span>
+            )}    
+
           </div>
           <button className="bg-[#CC5500] text-white text-base font-bold rounded-lg px-6 py-2">
             Book Now
