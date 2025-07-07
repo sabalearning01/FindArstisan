@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { CiStar } from "react-icons/ci";
 import bg from "../assets/bg.png";
 import profilepic from "../assets/profilepic.png";
 import Vector from "../assets/Vector.png";
@@ -204,9 +205,10 @@ const UserProfile = () => {
                 />
                 <br />
                 <label>Rate</label>
+                <div className="flex items-center"><CiStar  className="text-yellow-500"/> <CiStar  className="text-yellow-500"/>   <CiStar  className="text-yellow-500"/><CiStar  className="text-yellow-500"/><CiStar  className="text-yellow-500"/></div>
               </div>
               <div>
-                {/* <label className="mb-16" >Review</label> */}
+                {/* <label className="">Message</label> */}
                 <textarea
                   className="w-[610px] h-[165px] mt-[10px] bg-[#E6F2F2] rounded-2xl pl-2.5 pt-2.5"
                   placeholder="Type here...|"

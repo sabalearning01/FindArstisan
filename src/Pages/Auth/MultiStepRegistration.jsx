@@ -616,7 +616,7 @@
 
 // export default MultiStepRegistration;
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { CheckCircle } from "lucide-react";
@@ -662,6 +662,16 @@ const validationSchemas = [
 const MultiStepRegistration = () => {
   const [currentStep, setCurrentStep] = useState(0);
   const [filePreviews, setFilePreviews] = useState({});
+  const [token, setToken] = useState();
+
+useEffect(()=>{
+  const savedToken = localStorage.getItem("token");
+  if(savedToken){
+    setToken(savedToken)
+  }
+  
+}, [])
+ console.log(token)
 
   const formik = useFormik({
     initialValues: {
@@ -693,7 +703,8 @@ const MultiStepRegistration = () => {
         for (const key in values) {
           formData.append(key, values[key]);
         }
-        const token = localStorage.getItem("token");
+        // const token = localStorage.getItem("token");
+        // console.log(token)
 
         const response = await fetch(
           "https://artisan-dic2.onrender.com/artisan/complete-profile",
@@ -701,10 +712,12 @@ const MultiStepRegistration = () => {
             method: "POST",
             headers: {
               Authorization: `Bearer ${token}`,
+              "Content-Type": "multipart/form-data",
             },
             body: formData,
           }
         );
+        console.log(response)
 
         if (!response.ok) throw new Error("Submission failed");
         toast.success("Profile submitted successfully!");
@@ -981,7 +994,7 @@ const MultiStepRegistration = () => {
       <ToastContainer position="top-right" autoClose={4000} hideProgressBar />
       <form onSubmit={formik.handleSubmit} className="flex min-h-screen">
         {/* Sidebar Steps */}
-        <div className="w-[300px] bg-teal-700 text-white p-6">
+        <div className="w-[580px] bg-teal-700 text-white p-6">
           {steps.map((step, index) => (
             <div
               key={index}
@@ -1022,6 +1035,8 @@ const MultiStepRegistration = () => {
             ) : (
               <button
                 type="submit"
+                disabled={formik.isSubmitting}
+                onClick={formik.handleSubmit}
                 className="bg-[#BA4D00] text-white px-4 py-2 rounded"
               >
                 Finish Registration
