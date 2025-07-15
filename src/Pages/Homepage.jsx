@@ -44,7 +44,7 @@ const Homepage = () => {
 
     try {
       const response = await fetch(
-        `Api_endpoint?name=${encodeURIComponent(
+        `https://artisan-dic2.onrender.com/artisan/search?name=${encodeURIComponent(
           name
         )}&location=${encodeURIComponent(location)}`
       );
@@ -252,7 +252,6 @@ const Homepage = () => {
           Real stories from who is working with us
         </h5>
         <Card />
-       
       </div>
       {/* <CategoryCarousel /> */}
       <h3 className="font-[DM Sans] text-[36px] font-bold text-center mt-[64px] lg:mt-[104px] text-[#36454F] lg:font-medium lg:text-[44px]">
@@ -262,7 +261,7 @@ const Homepage = () => {
         We’ve got answer.
       </h1>
 
-       <CardWithTab/>
+      <CardWithTab />
 
       <div className=" hidden lg:flex justify-center items-center mt-[79px]  gap-[200px]">
         <h1 className="font-[DM Sans] font-medium text-[36px]">For Artisans</h1>
@@ -272,11 +271,10 @@ const Homepage = () => {
       <div className=" hidden lg:flex justify-center items-center gap-[10px]">
         <Artisan />
         <Users />
-       </div>
+      </div>
 
       <div className="flex lg:flex-row  flex-col-reverse lg:justify-between  items-center  lg:mx-[100px] lg:my-[100px]">
-        <div c
-        lassName="mx-[20px] my-[20px]">
+        <div c lassName="mx-[20px] my-[20px]">
           <h2 className=" font-[DM Sans] font-bold text-[36px] lg:text-[52px]">
             Looking to boost your earnings?
             <span className="text-[#008080]">
@@ -284,12 +282,12 @@ const Homepage = () => {
             </span>{" "}
             <span className="text-[#CC5500]">today!</span>
           </h2>
-            
-            <a href="/signup">
-          <button className="cursor-pointer mt-[24px] bg-[#CC5500] rounded-lg text-[14px] font-medium px-[48px] py-[18px] gap-1.5 text-[#FDFDFD] flex justify-center items-center">
-            Join us today <FaArrowRight />{" "}
-          </button>
-            </a>
+
+          <a href="/signup">
+            <button className="cursor-pointer mt-[24px] bg-[#CC5500] rounded-lg text-[14px] font-medium px-[48px] py-[18px] gap-1.5 text-[#FDFDFD] flex justify-center items-center">
+              Join us today <FaArrowRight />{" "}
+            </button>
+          </a>
         </div>
 
         <div className=" w-[100%]  grid grid-cols-3 grid-rows-3 gap-4 max-w-4xl mx-auto p-4">
@@ -304,7 +302,11 @@ const Homepage = () => {
 
           {/* <!-- Top Center Color Block --> */}
           <div className=" rounded-lg">
-            <img className="w-[190px] h-[101px]" src={Orange} alt="orange background" />
+            <img
+              className="w-[190px] h-[101px]"
+              src={Orange}
+              alt="orange background"
+            />
           </div>
 
           {/* <!-- Top Right Image --> */}
@@ -357,6 +359,3 @@ const Homepage = () => {
 };
 
 export default Homepage;
-
-
-
