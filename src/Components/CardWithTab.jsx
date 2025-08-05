@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Users from '../Components/Users';
+import Users from './Users';
 import Artisan from '../Components/Artisan';
 // import { Users } from 'lucide-react';
 
@@ -48,7 +48,7 @@ const CardWithTab = () => {
 
         {activeTab === "user" && (
           <div className="block lg:hidden">
-              <Users />
+              <Users/>
           </div>
         )}
       </div>

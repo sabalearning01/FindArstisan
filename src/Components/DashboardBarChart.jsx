@@ -1,4 +1,6 @@
 import React from 'react';
+
+
 import {
   BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer
 } from 'recharts';
@@ -13,9 +15,10 @@ const dashboardData = [
 ];
 
 const DashboardBarChart = () => (
-  <div className="w-[70%] h-[500px] bg-[#E6F2F2]">
+  <div className="lg:w-[70%] w-[95%] h-[500px] bg-[#E6F2F2] rounded-xl">
     <ResponsiveContainer width="100%" height="100%">
       <BarChart
+        className='text-[16px] lg:text-[20px] '
         data={dashboardData}
         margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
       >
