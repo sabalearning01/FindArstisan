@@ -34,7 +34,7 @@ const accordionData = [
   // Add more items if needed
 ];
 
-const Accordion = () => {
+const Users = () => {
   const [openIndex, setOpenIndex] = useState(null);
 
   const toggleAccordion = (index) => {
@@ -65,4 +65,4 @@ const Accordion = () => {
   );
 };
 
-export default Accordion;
+export default Users;

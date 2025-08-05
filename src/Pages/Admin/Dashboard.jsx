@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+// import { CiSearch, CiLocationOn } from "react-icons/ci";
 import AdminSideBar from "../../Components/AdminSideBar";
 import { CiSearch } from "react-icons/ci";
+import { IoMenuOutline } from "react-icons/io5";
 import { User } from "lucide-react";
 import AdminSearch from "../../Components/AdminSearch";
 import { FaUserTie } from "react-icons/fa6";
@@ -11,6 +13,19 @@ import { FaCheckCircle } from "react-icons/fa";
 import { CiBadgeDollar } from "react-icons/ci";
 import { MdMessage } from "react-icons/md";
 import DashboardBarChart from "../../Components/DashboardBarChart";
+import {
+  LayoutDashboard,
+  Users,
+  // User,
+  Briefcase,
+  ShoppingCart,
+  CreditCard,
+  MessageSquare,
+  BarChart2,
+  Settings,
+  LogOut,
+} from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const Data = [
   {
@@ -52,9 +67,16 @@ const Data = [
 ];
 
 const Dashboard = () => {
+  const navigate = useNavigate();
+
+  const [toggle, setToggle] = useState(false);
+
+  const handleToggle = () => {
+    setToggle((prevState) => !prevState);
+  };
   return (
     <div>
-      <div className="flex items-center justify-between p-4">
+      <div className="flex items-center justify-between gap-3.5 p-4">
         <AdminSearch />
         <select className="border rounded px-2 py-1">
           <option value="last30days">Last 30 Days</option>
@@ -64,7 +86,76 @@ const Dashboard = () => {
             <option key={year} value={year}>{`Year ${year}`}</option>
           ))}
         </select>
+        <IoMenuOutline
+          onClick={handleToggle}
+          className=" w-[90%] object-contain text-5xl lg:hidden block"
+        />
       </div>
+
+      {toggle && (
+        <div onClick={handleToggle} className="bg-teal-900 rounded-sm">
+          <div className="flex items-center gap-2 pl-1.5 font-[DM Sans] pt-3.5  ">
+            <LayoutDashboard className=" text-white " />
+            <a href="/">
+              <p className="pl-[10px]  text-white">Overview</p>
+            </a>
+          </div>
+          <div className="flex items-center gap-2 pl-1.5 font-[DM Sans] pt-3.5  ">
+            <Users className="text-white " />
+            <a href="/">
+              <p className="pl-[10px]  text-white">Artisans</p>
+            </a>
+          </div>
+          <div className="flex items-center gap-2 pl-1.5 font-[DM Sans] pt-3.5  ">
+            <User className=" text-white" />
+            <a href="/">
+              <p className="pl-[10px]  text-white">Customers</p>
+            </a>
+          </div>
+          <div className="flex items-center gap-2 pl-1.5 font-[DM Sans] pt-3.5  ">
+            <Briefcase className=" text-white" />
+            <a href="/">
+              <p className="pl-[10px]  text-white">Services</p>
+            </a>
+          </div>
+          <div className="flex items-center gap-2 pl-1.5 font-[DM Sans] pt-3.5  ">
+            <ShoppingCart className=" text-white" />{" "}
+            <a href="/">
+              <p className="pl-[10px]  text-white">Orders</p>
+            </a>
+          </div>
+          <div className="flex items-center gap-2 pl-1.5 font-[DM Sans] pt-3.5  ">
+            <CreditCard className=" text-white" />{" "}
+            <a href="/">
+              <p className="pl-[10px]  text-white">Transactions</p>
+            </a>
+          </div>
+          <div className="flex items-center gap-2 pl-1.5 font-[DM Sans] pt-3.5  ">
+            <MessageSquare className=" text-white" />{" "}
+            <a href="/">
+              <p className="pl-[10px]  text-white">Feedbacks</p>
+            </a>
+          </div>
+          <div className="flex items-center gap-2 pl-1.5 font-[DM Sans] pt-3.5  ">
+            <BarChart2 className=" text-white" />{" "}
+            <a href="/">
+              <p className="pl-[10px] text-white">Analytics</p>
+            </a>
+          </div>
+          <div className="flex items-center gap-2 pl-1.5 font-[DM Sans] pt-3.5  ">
+            <Settings className=" text-white" />{" "}
+            <a href="/">
+              <p className="pl-[10px]  text-white">Settings</p>
+            </a>
+          </div>
+          <div className="flex items-center gap-2 pl-1.5 font-[DM Sans] pt-3.5  ">
+            <LogOut className=" text-white" />{" "}
+            <a href="/">
+              <p className="pl-[10px]  text-white">Logout</p>
+            </a>
+          </div>
+        </div>
+      )}
 
       <div className="flex-1 p-4">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -85,44 +176,50 @@ const Dashboard = () => {
       <div className="flex justify-center gap-1.5 items-center p-4">
         <DashboardBarChart />
 
-        <div className="bg-[#E6F2F2] w-[50%] h-[500px]">
+        <div className="bg-[#E6F2F2] w-[50%] h-[500px] rounded-xl">
           <div className="flex items-center">
             {" "}
             <MdMessage className="text-[#BA4D00] w-[30px] h-[30px]" />
-            <h3 className="font-bold font-[DM Sans] text-[20px] text-[#36454F]">
+            <h3 className="font-bold font-[DM Sans] text-[16px] lg:text-[20px] text-[#36454F]">
               Recent Feedbacks
             </h3>{" "}
           </div>
           <div className="mt-[17px] bg-[#FAEEE6] w-[100%] h-[32px]">
-            <p className="text-[#36454F] text-center font-[DM Sans] font-normal text-[18px] ">
+            <p className="text-[#36454F] text-center font-[DM Sans] font-normal text-[12px] lg:text-[18px] ">
               <span className="text-[#CC5500]">John Doe:</span> "Great service!"
             </p>
           </div>
           <div className="mt-[17px] bg-white w-[100%] h-[32px]">
-            <p className="text-center text-[#36454F] text-[18px] font-normal font-[DM Sans] "><span className="text-[#CC5500]">Sarah Smith:</span> "Quick and reliable.</p>
+            <p className="lg:p-2  text-center text-[#36454F] text-[12px] lg:text-[18px] font-normal font-[DM Sans] ">
+              <span className="text-[#CC5500]">Sarah Smith:</span> "Quick and
+              reliable.
+            </p>
           </div>
-          
+
           <div className="mt-[17px] bg-[#FAEEE6] w-[100%] h-[70px]">
-            <p className="p-2 text-[#36454F] text-center font-[DM Sans] font-normal text-[18px] ">
-              <span className="text-[#CC5500]">John Doe:</span> "Great service and i am definately coming back!"
+            <p className="lg:p-2 p-1 text-[#36454F] text-center font-[DM Sans] font-normal text-[12px] lg:text-[18px] ">
+              <span className="text-[#CC5500]">John Doe:</span> "Great service
+              and i am definately coming back!"
             </p>
           </div>
 
           <div className="mt-[17px] bg-[#FAEEE6] w-[100%] h-[32px]">
-            <p className="text-[#36454F] text-center font-[DM Sans] font-normal text-[18px] ">
+            <p className="lg:p-2  text-[#36454F] text-center font-[DM Sans] font-normal text-[12px] lg:text-[18px] ">
               <span className="text-[#CC5500]">John Doe:</span> "Great service!"
-            </p>
-          </div>
-              
-              <div className="mt-[17px] bg-[#FAEEE6] w-[100%] h-[70px]">
-            <p className="p-2 text-[#36454F] text-center font-[DM Sans] font-normal text-[18px] ">
-              <span className="text-[#CC5500]">John Doe:</span> "Great service and i am definately coming back!"
             </p>
           </div>
 
           <div className="mt-[17px] bg-[#FAEEE6] w-[100%] h-[70px]">
-            <p className="p-2 text-[#36454F] text-center font-[DM Sans] font-normal text-[18px] ">
-              <span className="text-[#CC5500]">John Doe:</span> "Great service and i am definately coming back!"
+            <p className="lg:p-2 p-1 text-[#36454F] text-center font-[DM Sans] font-normal text-[12px] lg:text-[18px] ">
+              <span className="text-[#CC5500]">John Doe:</span> "Great service
+              and i am definately coming back!"
+            </p>
+          </div>
+
+          <div className="mt-[17px] bg-[#FAEEE6] w-[100%] h-[70px]">
+            <p className="lg:p-2 p-1 text-[#36454F] text-center font-[DM Sans] font-normal text-[12px] lg:text-[18px] ">
+              <span className="text-[#CC5500]">John Doe:</span> "Great service
+              and i am definately coming back!"
             </p>
           </div>
         </div>

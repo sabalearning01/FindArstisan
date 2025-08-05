@@ -4,7 +4,7 @@ const AdminSearch = () => {
   return (
     <div>
       {/* Search Input with Icon */}
-      <div className="relative w-[568px] h-[55px]">
+      <div className="relative lg:w-[568px] w-[90%] h-[55px]">
         <input
           type="text"
           placeholder="Search"

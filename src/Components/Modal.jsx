@@ -24,7 +24,7 @@ const Modal = ({ onClose, message, redirectText, redirectTo }) => {
         <p className="text-[12px] lg:text-[18px] text-[#36454F] mb-6">
           {message || (
             <>
-              You have successfully signed up. Click{" "}
+              You have successfully signed up. <br/> Click{" "}
               <span
                 className="text-[#CC5500] font-bold cursor-pointer underline"
                 onClick={handleRedirect}
@@ -36,21 +36,21 @@ const Modal = ({ onClose, message, redirectText, redirectTo }) => {
           )}
         </p>
 
-        <button
+        {/* <button
           onClick={handleRedirect}
           className="bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700"
         >
           {redirectText || "Continue"}
-        </button>
+        </button> */}
 
-        <div>
+        {/* <div>
           <button
             onClick={onClose}
             className="mt-4 text-sm text-gray-600 hover:underline"
           >
             Close
           </button>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -163,19 +163,19 @@ const Homepage = () => {
           <p className="font-[DM Sans] ml-[20px]  font-medium text-[16px] lg:text-[18px] text-white">
             Last Search:
           </p>
-          <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">
+          <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] mt-2.5 rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">
             BrickLayer
           </button>
-          <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">
+          <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] mt-2.5  rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">
             Rewire Mechanic
           </button>
-          <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">
+          <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] mt-2.5  rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">
             Electrician
           </button>
-          <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">
+          <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] mt-2.5  rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">
             Carpenter
           </button>
-          <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">
+          <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] mt-2.5  rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">
             Solar
           </button>
         </div>
@@ -234,10 +234,10 @@ const Homepage = () => {
       </button>
 
       <div className="w-[100%] h-[872px] mt-[64px] bg-[#003636]">
-        <h3 className="   text-center font-bold lg:font-semibold text-[#FDFDFD] font-[DM Sans] text-[32px] lg:text-[44px] pt-[104px]">
+        <h3 className="   text-center font-bold lg:font-semibold text-[#FDFDFD] font-[DM Sans]  text-[28px]  lg:text-[44px] pt-[104px]">
           What Our Customers Say
         </h3>
-        <h5 className=" text-center mt-[16px] text-[#EFCAB0] text-[16px] font-semibold lg:text-[20px] lg:font-medium font-[DM Sans]">
+        <h5 className=" text-center mt-[16px] text-[#EFCAB0] text-[16px] pl-[20px] pr-[20px] font-semibold  lg:text-[20px] lg:font-medium font-[DM Sans]">
           Real stories from people who’ve hired top artisans through us
         </h5>
 
@@ -274,8 +274,8 @@ const Homepage = () => {
       </div>
 
       <div className="flex lg:flex-row  flex-col-reverse lg:justify-between  items-center  lg:mx-[100px] lg:my-[100px]">
-        <div c lassName="mx-[20px] my-[20px]">
-          <h2 className=" font-[DM Sans] font-bold text-[36px] lg:text-[52px]">
+        <div className="mx-[20px] my-[20px]">
+          <h2 className=" font-[DM Sans] font-bold text-[30px] lg:text-[52px]">
             Looking to boost your earnings?
             <span className="text-[#008080]">
               Join our team of skilled artisans
