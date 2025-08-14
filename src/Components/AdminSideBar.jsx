@@ -12,9 +12,13 @@ import {
   LogOut,
 } from "lucide-react";
 import { useNavigate } from "react-router-dom";
-  
-  const AdminSideBar = () => {
+
+const AdminSideBar = () => {
   const navigate = useNavigate();
+
+  const handleNavigateHome = () => {
+    navigate("/");
+  };
 
   const menuItems = [
     {
@@ -62,12 +66,19 @@ import { useNavigate } from "react-router-dom";
       icon: <Settings size={18} />,
       path: "/dashboard/settings",
     },
-    { label: "Logout", icon: <LogOut size={18} />, path: "/dashboard/logout" },
+    {
+      label: "Logout",
+      icon: <LogOut size={18} />,
+      path: "/dashboard/logout",
+    },
   ];
 
   return (
     <div className="bg-[#003030] w-[346px] h-100% lg:block hidden">
-      <div className="font-[Montserrat] text-white text-[20px] font-bold p-4  ">
+      <div
+        className="font-[Montserrat] text-white text-[20px] font-bold p-4 cursor-pointer"
+        onClick={handleNavigateHome}
+      >
         Admin Dashboard
       </div>
       <ul className="font-[Montserrat] text-white">

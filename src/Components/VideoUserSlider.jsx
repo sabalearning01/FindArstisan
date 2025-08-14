@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import Caption from "../assets/Caption.png";
+import caption from "../assets/caption.png";
 
 const projects = [
-  { id: 1, title: "Project 1", image: Caption },
-  { id: 2, title: "Project 2", image: Caption },
-  { id: 3, title: "Project 3", image: Caption  },
-  { id: 4, title: "Project 4", image: Caption },
-  { id: 5, title: "Project 5", image: Caption },
-  { id: 6, title: "Project 6", image: Caption },
+  { id: 1, title: "Project 1", image: caption },
+  { id: 2, title: "Project 2", image: caption },
+  { id: 3, title: "Project 3", image: caption },
+  { id: 4, title: "Project 4", image: caption },
+  { id: 5, title: "Project 5", image: caption },
+  { id: 6, title: "Project 6", image: caption },
 ];
 
 const itemsPerSlide = 3;
