@@ -66,7 +66,8 @@ const Homepage = () => {
   return (
     <div>
       {/* <Header /> */}
-      <div className="bg-[#004646] w-[100%] h-[1090px] lg:h-[1210px]">
+      {/* <div className="bg-[#004646] w-[100%] h-[1090px] lg:h-[1210px]"> */}
+      <div className="bg-[#004646] w-full py-[50px]">
         <h2 className="font-[DM Sans] font-bold lg:font-semibold pt-[61px] lg:pt-[91px] text-[32px]  lg:text-[62px] text-white text-center mx-[20px] lg:mx-[273px]">
           Hire{" "}
           <span className="text-[#E8B18A]">
@@ -141,7 +142,7 @@ const Homepage = () => {
           </form>
         </div>
 
-        {/* {error && <div className="mt-4 text-red-500 text-center">{error}</div>}
+        {error && <div className="mt-4 text-red-500 text-center">{error}</div>}
 
         {isLoading ? (
           <div className="mt-4 text-white text-center">Loading...</div>
@@ -158,8 +159,8 @@ const Homepage = () => {
               </ul>
             </div>
           )
-        )} */}
-        <div className=" relative z-50 gap-y-7.5  md:flex   justify-center items-center  mt-[16px] lg:mt-[16px]">
+        )}
+         {/* <div className=" relative z-50 gap-y-7.5  md:flex   justify-center items-center  mt-[16px] lg:mt-[16px]">
           <p className="font-[DM Sans] ml-[20px]  font-medium text-[16px] lg:text-[18px] text-white">
             Last Search:
           </p>
@@ -178,7 +179,7 @@ const Homepage = () => {
           <button className="cursor-pointer bg-[#008080] px-[16px] py-[8px] mt-2.5  rounded-4xl text-[#FDFDFD] font-semibold text-[16px] font-[DM Sans] ml-[16px] rounded-4xl">
             Solar
           </button>
-        </div>
+        </div>  */}
 
         <div
           className="hidden lg:block relative bottom-[300px] lg:w-auto lg:h-[712px] bg-no-repeat "
